@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Topic 13: Set Theory & Venn Diagrams | Hexaware Day-1</title>
+<link rel="stylesheet" href="shared_styles.css">
+</head>
+<body>
+<div class="container">
+<nav class="top-nav">
+  <div class="nav-brand">🎯 Hexaware Aptitude Master</div>
+  <div class="nav-links">
+    <a href="dashboard.html" class="nav-btn home">🏠 Dashboard</a>
+    <a href="topic_geometry.html" class="nav-btn">← Geometry</a>
+    <a href="topic_di.html" class="nav-btn">Next: Data Interpretation →</a>
+  </div>
+</nav>
+<div class="hero">
+  <div class="hero-badge">📊 Topic 13 of 28 &nbsp;|&nbsp; DAY 1</div>
+  <h1>SET THEORY & <span>VENN DIAGRAMS</span></h1>
+  <p>The formula n(A∪B) = n(A) + n(B) − n(A∩B) is the heart of this topic. Draw the Venn diagram, fill in the values from outside-in, and you'll solve any question in under 30 seconds.</p>
+  <div class="hero-stats">
+    <div class="stat-chip"><div class="val">⭐⭐⭐</div><div class="lbl">Weightage</div></div>
+    <div class="stat-chip"><div class="val">EASY</div><div class="lbl">Difficulty</div></div>
+    <div class="stat-chip"><div class="val">30s</div><div class="lbl">Per Question</div></div>
+    <div class="stat-chip"><div class="val">HIGH</div><div class="lbl">Hexaware Freq</div></div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-title"><span class="icon icon-green">📊</span>Visual: Venn Diagram Breakdown</div>
+  <div class="svg-container">
+    <svg width="500" height="220" viewBox="0 0 500 220" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <filter id="stf"><feDropShadow dx="0" dy="3" stdDeviation="5" flood-opacity="0.3"/></filter>
+      </defs>
+      <!-- Circle A -->
+      <circle cx="185" cy="110" r="90" fill="rgba(108,99,255,0.2)" stroke="#6c63ff" stroke-width="2"/>
+      <!-- Circle B -->
+      <circle cx="315" cy="110" r="90" fill="rgba(255,101,132,0.2)" stroke="#ff6584" stroke-width="2"/>
+      <!-- Labels -->
+      <text x="120" y="100" text-anchor="middle" fill="#6c63ff" font-size="14" font-weight="bold">Only A</text>
+      <text x="120" y="120" text-anchor="middle" fill="#6c63ff" font-size="20" font-weight="900">30</text>
+      <text x="250" y="100" text-anchor="middle" fill="#ffd700" font-size="12" font-weight="bold">Both A&B</text>
+      <text x="250" y="122" text-anchor="middle" fill="#ffd700" font-size="22" font-weight="900">20</text>
+      <text x="380" y="100" text-anchor="middle" fill="#ff6584" font-size="14" font-weight="bold">Only B</text>
+      <text x="380" y="120" text-anchor="middle" fill="#ff6584" font-size="20" font-weight="900">25</text>
+      <text x="30" y="185" text-anchor="left" fill="#a0a0b0" font-size="11">Total = 30+20+25 = 75</text>
+      <text x="250" y="195" text-anchor="middle" fill="#43e97b" font-size="12" font-weight="bold">n(A∪B) = n(A) + n(B) - n(A∩B)</text>
+      <text x="250" y="215" text-anchor="middle" fill="#a0a0b0" font-size="11">= 50 + 45 - 20 = 75 ✅</text>
+      <!-- Set labels -->
+      <text x="140" y="40" text-anchor="middle" fill="#6c63ff" font-size="15" font-weight="bold">Set A (50)</text>
+      <text x="360" y="40" text-anchor="middle" fill="#ff6584" font-size="15" font-weight="bold">Set B (45)</text>
+    </svg>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-title"><span class="icon icon-gold">📐</span>All Formulas</div>
+  <div class="formula-grid">
+    <div class="formula-card">
+      <div class="formula-name">Two Sets Union Formula</div>
+      <div class="formula-eq">n(A∪B) = n(A)+n(B)−n(A∩B)</div>
+      <div class="formula-desc">Total in either A or B = A alone + B alone + Both - double counted intersection.</div>
+      <div class="formula-use">🔑 Most tested formula. Find "total" or "at least one" questions.</div>
+    </div>
+    <div class="formula-card">
+      <div class="formula-name">Only A (not in B)</div>
+      <div class="formula-eq">Only A = n(A) − n(A∩B)</div>
+      <div class="formula-desc">People in A but not in B = Total A minus those in both.</div>
+      <div class="formula-use">🔑 "Only cricket players" type questions</div>
+    </div>
+    <div class="formula-card">
+      <div class="formula-name">Only B (not in A)</div>
+      <div class="formula-eq">Only B = n(B) − n(A∩B)</div>
+      <div class="formula-desc">People in B but not in A.</div>
+      <div class="formula-use">🔑 Always draw Venn diagram first!</div>
+    </div>
+    <div class="formula-card">
+      <div class="formula-name">Three Sets Formula</div>
+      <div class="formula-eq">n(A∪B∪C) = n(A)+n(B)+n(C)−n(A∩B)−n(B∩C)−n(A∩C)+n(A∩B∩C)</div>
+      <div class="formula-desc">For three overlapping sets. Subtract pairs, add back triple intersection.</div>
+      <div class="formula-use">🔑 Used in surveys: "likes all three", "likes exactly two" etc.</div>
+    </div>
+    <div class="formula-card">
+      <div class="formula-name">Neither A nor B</div>
+      <div class="formula-eq">Neither = Total − n(A∪B)</div>
+      <div class="formula-desc">People in neither group = overall total minus those in either group.</div>
+      <div class="formula-use">🔑 "How many like neither?" questions</div>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-title"><span class="icon icon-green">⚡</span>Placement Strategy</div>
+  <div class="trick-box">
+    <div class="trick-title">🔥 Outside-In Method — Always Draw First!</div>
+    <div class="trick-content">
+      Step 1: Draw two overlapping circles (A and B)<br>
+      Step 2: Fill in the INTERSECTION first (middle): given "both" value<br>
+      Step 3: Fill "Only A" = n(A) − Both<br>
+      Step 4: Fill "Only B" = n(B) − Both<br>
+      Step 5: Total = Only A + Only B + Both<br>
+      This approach works for ALL Venn diagram questions!
+    </div>
+  </div>
+  <div class="warn-box">
+    <div class="warn-title">❌ Common Mistakes</div>
+    <strong>WRONG:</strong> n(A∪B) = n(A) + n(B) always ❌ (only if mutually exclusive!)<br>
+    <strong>RIGHT:</strong> n(A∪B) = n(A) + n(B) − n(A∩B) ✅<br><br>
+    <strong>WRONG:</strong> "Exactly two subjects" and "At least two subjects" are the same ❌<br>
+    <strong>RIGHT:</strong> "Exactly two" excludes those in all three. "At least two" includes all three. ✅
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-title"><span class="icon icon-purple">🧠</span>Interactive Q&A</div>
+  <div class="question-card">
+    <div class="q-num">QUESTION 1 — EASY</div>
+    <div class="q-text">In a class, 30 students like cricket, 25 like football, and 10 like both. How many like at least one sport?</div>
+    <div class="options">
+      <button class="option-btn" onclick="selectOption(this,'q1',false)">A) 55</button>
+      <button class="option-btn" onclick="selectOption(this,'q1',true)">B) 45</button>
+      <button class="option-btn" onclick="selectOption(this,'q1',false)">C) 50</button>
+      <button class="option-btn" onclick="selectOption(this,'q1',false)">D) 35</button>
+    </div>
+    <button class="reveal-btn" onclick="toggleReveal('r1')">📖 Show Solution</button>
+    <div class="answer-reveal" id="r1">
+      <strong>✅ B) 45</strong><br><br>
+      n(C∪F) = n(C) + n(F) − n(C∩F)<br>
+      = 30 + 25 − 10 = <strong>45 students</strong>
+    </div>
+  </div>
+  <div class="question-card">
+    <div class="q-num">QUESTION 2 — MODERATE</div>
+    <div class="q-text">In a survey of 100 people, 70 like tea, 50 like coffee, and 30 like both. How many like neither?</div>
+    <div class="options">
+      <button class="option-btn" onclick="selectOption(this,'q2',false)">A) 5</button>
+      <button class="option-btn" onclick="selectOption(this,'q2',false)">B) 15</button>
+      <button class="option-btn" onclick="selectOption(this,'q2',true)">C) 10</button>
+      <button class="option-btn" onclick="selectOption(this,'q2',false)">D) 20</button>
+    </div>
+    <button class="reveal-btn" onclick="toggleReveal('r2')">📖 Show Solution</button>
+    <div class="answer-reveal" id="r2">
+      <strong>✅ C) 10</strong><br><br>
+      n(T∪C) = 70 + 50 − 30 = 90<br>
+      Neither = Total − n(T∪C) = 100 − 90 = <strong>10 people</strong>
+    </div>
+  </div>
+  <div class="question-card">
+    <div class="q-num">QUESTION 3 — EXAM MODERATE</div>
+    <div class="q-text">In a class of 50, 25 like Math, 30 like Science, and 10 like both. How many like ONLY Math?</div>
+    <div class="options">
+      <button class="option-btn" onclick="selectOption(this,'q3',true)">A) 15</button>
+      <button class="option-btn" onclick="selectOption(this,'q3',false)">B) 20</button>
+      <button class="option-btn" onclick="selectOption(this,'q3',false)">C) 25</button>
+      <button class="option-btn" onclick="selectOption(this,'q3',false)">D) 10</button>
+    </div>
+    <button class="reveal-btn" onclick="toggleReveal('r3')">📖 Show Solution</button>
+    <div class="answer-reveal" id="r3">
+      <strong>✅ A) 15</strong><br><br>
+      Only Math = n(Math) − n(Both) = 25 − 10 = <strong>15 students</strong>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-title"><span class="icon icon-gold">📋</span>Quick Revision Matrix</div>
+  <table class="matrix-table">
+    <tr><th>Formula</th><th>When to Use</th><th>Key Step</th><th>Difficulty</th><th>Hexaware Weight</th></tr>
+    <tr><td>n(A)+n(B)−n(A∩B)</td><td>"At least one" / "Either"</td><td>Draw Venn first</td><td class="difficulty-easy">Easy</td><td>⭐⭐⭐⭐⭐</td></tr>
+    <tr><td>n(A)−n(A∩B)</td><td>"Only A" questions</td><td>Subtract overlap</td><td class="difficulty-easy">Easy</td><td>⭐⭐⭐⭐</td></tr>
+    <tr><td>Total−n(A∪B)</td><td>"Neither" questions</td><td>After finding union</td><td class="difficulty-easy">Easy</td><td>⭐⭐⭐⭐⭐</td></tr>
+    <tr><td>3-set formula</td><td>Three group surveys</td><td>Fill diagram inside-out</td><td class="difficulty-med">Medium</td><td>⭐⭐⭐⭐</td></tr>
+  </table>
+</div>
+
+<div class="progress-footer">
+  <h3>📊 Day-1 Progress</h3>
+  <div style="display:flex;justify-content:space-between;margin-bottom:8px;">
+    <span style="color:var(--text2);font-size:0.9rem;">13 of 14 topics completed</span>
+    <span style="color:var(--accent3);font-weight:700;">93%</span>
+  </div>
+  <div class="progress-bar-outer"><div class="progress-bar-inner" style="width:93%"></div></div>
+  <a href="topic_di.html" class="next-topic-btn">Final Topic: Data Interpretation →</a>
+</div>
+</div>
+<script>
+function selectOption(btn,qId,isCorrect){
+  const p=btn.closest('.question-card');
+  p.querySelectorAll('.option-btn').forEach(b=>{b.classList.remove('correct','wrong');b.disabled=true;});
+  btn.classList.add(isCorrect?'correct':'wrong');
+  if(!isCorrect){p.querySelectorAll('.option-btn').forEach(b=>{if(b.onclick.toString().includes('true'))b.classList.add('correct');});}
+}
+function toggleReveal(id){document.getElementById(id).classList.toggle('show');}
+</script>
+</body>
+</html>

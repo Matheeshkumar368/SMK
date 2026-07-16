@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hexaware Aptitude Masterclass — 7 Day Sprint</title>
+<link rel="stylesheet" href="shared_styles.css">
+<style>
+.hero-main{text-align:center;padding:60px 20px 40px;}
+.hero-main h1{font-size:2.8rem;font-weight:900;line-height:1.2;margin-bottom:16px;}
+.hero-main h1 span{background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+.hero-main p{color:var(--text2);font-size:1.1rem;max-width:600px;margin:0 auto 32px;}
+.day-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-bottom:36px;}
+.day-card{background:var(--surface);border:1px solid var(--border);border-radius:16px;
+  padding:24px;text-align:center;backdrop-filter:blur(20px);}
+.day-card.active{border-color:var(--accent);box-shadow:0 0 30px rgba(108,99,255,0.2);}
+.day-badge{font-size:0.75rem;text-transform:uppercase;letter-spacing:2px;
+  color:var(--accent);font-weight:700;margin-bottom:12px;}
+.day-card h3{font-size:1.1rem;margin-bottom:8px;}
+.day-card p{font-size:0.85rem;color:var(--text2);line-height:1.6;}
+.day-stat{margin-top:14px;font-size:1.8rem;font-weight:900;color:var(--gold);}
+.topics-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;}
+.topics-header h2{font-size:1.4rem;font-weight:700;}
+.topics-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px;}
+.topic-card{background:var(--surface);border:1px solid var(--border);border-radius:14px;
+  padding:18px;text-decoration:none;color:var(--text);display:block;
+  transition:transform 0.2s,box-shadow 0.2s,border-color 0.2s;backdrop-filter:blur(20px);}
+.topic-card:hover{transform:translateY(-3px);box-shadow:0 12px 30px rgba(108,99,255,0.2);border-color:var(--accent);}
+.topic-num{font-size:0.75rem;color:var(--accent);font-weight:700;text-transform:uppercase;
+  letter-spacing:1px;margin-bottom:6px;}
+.topic-title{font-size:1rem;font-weight:700;margin-bottom:8px;}
+.topic-meta{display:flex;gap:8px;flex-wrap:wrap;}
+.meta-tag{font-size:0.72rem;padding:3px 10px;border-radius:6px;font-weight:600;}
+.tag-easy{background:rgba(67,233,123,0.15);color:var(--accent3);}
+.tag-med{background:rgba(255,215,0,0.15);color:var(--gold);}
+.tag-hard{background:rgba(255,101,132,0.15);color:var(--accent2);}
+.tag-high{background:rgba(108,99,255,0.15);color:var(--accent);}
+.rule-box{background:linear-gradient(135deg,rgba(108,99,255,0.1),rgba(255,101,132,0.05));
+  border:1px solid rgba(108,99,255,0.25);border-radius:16px;padding:24px;margin-bottom:28px;}
+.rule-box h3{color:var(--accent);margin-bottom:16px;}
+.rule-steps{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px;}
+.rule-step{background:var(--surface2);border-radius:12px;padding:14px;text-align:center;}
+.rule-step .num{font-size:1.6rem;font-weight:900;color:var(--gold);margin-bottom:6px;}
+.rule-step p{font-size:0.85rem;color:var(--text2);line-height:1.5;}
+</style>
+</head>
+<body>
+<div class="container">
+<nav class="top-nav">
+  <div class="nav-brand">🎯 Hexaware Aptitude Master</div>
+  <div class="nav-links">
+    <span style="color:var(--text2);font-size:0.85rem;">7-Day Sprint Plan</span>
+  </div>
+</nav>
+
+<div class="hero-main">
+  <div class="hero-badge" style="display:inline-block;margin-bottom:16px;">🚀 YOUR 7-DAY HEXAWARE SPRINT</div>
+  <h1>Crack Hexaware <span>Aptitude Round</span><br>in 7 Days</h1>
+  <p>Formula mastery + pattern recognition + shortcut techniques. You don't just study — you train like a placement topper.</p>
+</div>
+
+<div class="day-grid">
+  <div class="day-card active">
+    <div class="day-badge">📅 DAY 1 — ACTIVE</div>
+    <h3>Weapon Collection</h3>
+    <p>Learn every formula, keyword trigger, and shortcut. Build your pattern recognition system.</p>
+    <div class="day-stat">14 Topics</div>
+  </div>
+  <div class="day-card">
+    <div class="day-badge">📅 DAY 2</div>
+    <h3>Memory + Easy Problems</h3>
+    <p>Write all formulas blind. Solve 5-10 easy problems per topic. Identify common mistakes.</p>
+    <div class="day-stat" style="color:var(--text2)">Coming Soon</div>
+  </div>
+  <div class="day-card">
+    <div class="day-badge">📅 DAY 3</div>
+    <h3>Company Level Prep</h3>
+    <p>Mixed questions, time management, elimination techniques, previous company questions.</p>
+    <div class="day-stat" style="color:var(--text2)">Coming Soon</div>
+  </div>
+</div>
+
+<div class="rule-box">
+  <h3>⚡ RULE NO. 1 — Ask Yourself These 4 Questions Before Every Problem</h3>
+  <div class="rule-steps">
+    <div class="rule-step"><div class="num">Q1</div><p><strong>What is asking?</strong><br>Read the question end first</p></div>
+    <div class="rule-step"><div class="num">Q2</div><p><strong>Which topic?</strong><br>Spot the keywords in 5 sec</p></div>
+    <div class="rule-step"><div class="num">Q3</div><p><strong>Which formula?</strong><br>Match keyword to formula</p></div>
+    <div class="rule-step"><div class="num">Q4</div><p><strong>Shortcut or Normal?</strong><br>Always try shortcut first</p></div>
+  </div>
+</div>
+
+<div class="topics-header">
+  <h2>📚 Day 1 Topics — Click to Study</h2>
+  <span style="color:var(--text2);font-size:0.9rem;">14 topics • 120+ formulas • 80+ shortcuts</span>
+</div>
+
+<div class="topics-grid">
+  <a href="topic_percentage.html" class="topic-card">
+    <div class="topic-num">Topic 01</div>
+    <div class="topic-title">📊 Percentage</div>
+    <div class="topic-meta">
+      <span class="meta-tag tag-easy">Easy</span>
+      <span class="meta-tag tag-high">⭐⭐⭐⭐⭐ Weight</span>
+    </div>
+  </a>
+  <a href="topic_ratio.html" class="topic-card">
+    <div class="topic-num">Topic 02</div>
+    <div class="topic-title">⚖️ Ratio & Proportion</div>
+    <div class="topic-meta">
+      <span class="meta-tag tag-easy">Easy</span>
+      <span class="meta-tag tag-high">⭐⭐⭐⭐ Weight</span>
+    </div>
+  </a>
+  <a href="topic_average.html" class="topic-card">
+    <div class="topic-num">Topic 03</div>
+    <div class="topic-title">📈 Average</div>
+    <div class="topic-meta">
+      <span class="meta-tag tag-easy">Easy</span>
+      <span class="meta-tag tag-high">⭐⭐⭐⭐ Weight</span>
+    </div>
+  </a>
+  <a href="topic_profit.html" class="topic-card">
+    <div class="topic-num">Topic 04</div>
+    <div class="topic-title">💰 Profit & Loss</div>
+    <div class="topic-meta">
+      <span class="meta-tag tag-med">Medium</span>
+      <span class="meta-tag tag-high">⭐⭐⭐⭐⭐ Weight</span>
+    </div>
+  </a>
+  <a href="topic_alligation.html" class="topic-card">
+    <div class="topic-num">Topic 05</div>
+    <div class="topic-title">🧪 Alligation & Mixture</div>
+    <div class="topic-meta">
+      <span class="meta-tag tag-easy">Easy</span>
+      <span class="meta-tag tag-high">⭐⭐⭐⭐ Weight</span>
+    </div>
+  </a>
+  <a href="topic_timework.html" class="topic-card">
+    <div class="topic-num">Topic 06</div>
+    <div class="topic-title">🔧 Time & Work</div>
+    <div class="topic-meta">
+      <span class="meta-tag tag-med">Medium</span>
+      <span class="meta-tag tag-high">⭐⭐⭐⭐⭐ Weight</span>
+    </div>
+  </a>
+  <a href="topic_tsd.html" class="topic-card">
+    <div class="topic-num">Topic 07</div>
+    <div class="topic-title">🚀 Time Speed Distance</div>
+    <div class="topic-meta">
+      <span class="meta-tag tag-med">Medium</span>
+      <span class="meta-tag tag-high">⭐⭐⭐⭐⭐ Weight</span>
+    </div>
+  </a>
+  <a href="topic_pc.html" class="topic-card">
+    <div class="topic-num">Topic 08</div>
+    <div class="topic-title">🔢 Permutation & Combination</div>
+    <div class="topic-meta">
+      <span class="meta-tag tag-med">Medium</span>
+      <span class="meta-tag tag-high">⭐⭐⭐⭐ Weight</span>
+    </div>
+  </a>
+  <a href="topic_probability.html" class="topic-card">
+    <div class="topic-num">Topic 09</div>
+    <div class="topic-title">🎲 Probability</div>
+    <div class="topic-meta">
+      <span class="meta-tag tag-med">Medium</span>
+      <span class="meta-tag tag-high">⭐⭐⭐⭐ Weight</span>
+    </div>
+  </a>
+  <a href="topic_clock.html" class="topic-card">
+    <div class="topic-num">Topic 10</div>
+    <div class="topic-title">🕐 Clock & Calendar</div>
+    <div class="topic-meta">
+      <span class="meta-tag tag-easy">Easy</span>
+      <span class="meta-tag tag-high">⭐⭐⭐ Weight</span>
+    </div>
+  </a>
+  <a href="topic_ages.html" class="topic-card">
+    <div class="topic-num">Topic 11</div>
+    <div class="topic-title">👴 Problems on Ages</div>
+    <div class="topic-meta">
+      <span class="meta-tag tag-easy">Very Easy</span>
+      <span class="meta-tag tag-high">⭐⭐⭐ Weight</span>
+    </div>
+  </a>
+  <a href="topic_geometry.html" class="topic-card">
+    <div class="topic-num">Topic 12</div>
+    <div class="topic-title">📐 Geometry & Mensuration</div>
+    <div class="topic-meta">
+      <span class="meta-tag tag-med">Medium</span>
+      <span class="meta-tag tag-high">⭐⭐⭐ Weight</span>
+    </div>
+  </a>
+  <a href="topic_settheory.html" class="topic-card">
+    <div class="topic-num">Topic 13</div>
+    <div class="topic-title">🔵 Set Theory / Venn Diagram</div>
+    <div class="topic-meta">
+      <span class="meta-tag tag-easy">Easy</span>
+      <span class="meta-tag tag-high">⭐⭐⭐⭐ Weight</span>
+    </div>
+  </a>
+  <a href="topic_di.html" class="topic-card" style="border-color:var(--accent3);background:rgba(67,233,123,0.05);">
+    <div class="topic-num">Topic 14 — FINAL</div>
+    <div class="topic-title">📊 Data Interpretation</div>
+    <div class="topic-meta">
+      <span class="meta-tag tag-med">Medium</span>
+      <span class="meta-tag tag-high">⭐⭐⭐⭐⭐ Weight</span>
+    </div>
+  </a>
+</div>
+
+<div style="background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:24px;margin-top:28px;margin-bottom:40px;">
+  <p style="color:var(--gold);font-weight:700;margin-bottom:12px;">💡 MENTOR'S FINAL REMINDER FOR DAY 1</p>
+  <p style="color:var(--text2);line-height:1.8;">
+    Don't study topics in isolation. Every topic connects:<br>
+    <strong style="color:var(--accent)">Percentage → Profit/Loss → Alligation</strong><br>
+    <strong style="color:var(--accent)">Ratio → Ages → Mixture</strong><br>
+    <strong style="color:var(--accent)">Average → TSD (average speed)</strong><br>
+    <strong style="color:var(--accent)">P&C → Probability</strong><br><br>
+    Your goal today: <strong>Recognize the PATTERN</strong> of every topic in 5 seconds.
+  </p>
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Topic 9: Probability | Hexaware Day-1</title>
+<link rel="stylesheet" href="shared_styles.css">
+</head>
+<body>
+<div class="container">
+<nav class="top-nav">
+  <div class="nav-brand">🎯 Hexaware Aptitude Master</div>
+  <div class="nav-links">
+    <a href="dashboard.html" class="nav-btn home">🏠 Dashboard</a>
+    <a href="topic_pc.html" class="nav-btn">← P&C</a>
+    <a href="topic_clock.html" class="nav-btn">Next: Clock & Calendar →</a>
+  </div>
+</nav>
+<div class="hero">
+  <div class="hero-badge">📊 Topic 9 of 28 &nbsp;|&nbsp; DAY 1</div>
+  <h1>PROBABILITY <span>Mastery</span></h1>
+  <p>Probability = Favourable outcomes ÷ Total outcomes. Always between 0 and 1. Impossible = 0. Certain = 1. Master AND/OR rules and you can handle any placement question.</p>
+  <div class="hero-stats">
+    <div class="stat-chip"><div class="val">⭐⭐⭐</div><div class="lbl">Weightage</div></div>
+    <div class="stat-chip"><div class="val">MEDIUM</div><div class="lbl">Difficulty</div></div>
+    <div class="stat-chip"><div class="val">40s</div><div class="lbl">Per Question</div></div>
+    <div class="stat-chip"><div class="val">HIGH</div><div class="lbl">Hexaware Freq</div></div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-title"><span class="icon icon-gold">📐</span>All Formulas</div>
+  <div class="formula-grid">
+    <div class="formula-card">
+      <div class="formula-name">Core Formula</div>
+      <div class="formula-eq">P(E) = Favourable / Total</div>
+      <div class="formula-desc">Count outcomes where event happens ÷ all possible outcomes.</div>
+      <div class="formula-use">🔑 P always between 0 and 1. P(impossible)=0, P(certain)=1</div>
+    </div>
+    <div class="formula-card">
+      <div class="formula-name">Complementary Rule</div>
+      <div class="formula-eq">P(not E) = 1 − P(E)</div>
+      <div class="formula-desc">Probability of event NOT happening = 1 minus probability of happening.</div>
+      <div class="formula-use">💡 Use when "at least one" or "NOT" appears in question</div>
+    </div>
+    <div class="formula-card">
+      <div class="formula-name">AND Rule — Independent Events</div>
+      <div class="formula-eq">P(A∩B) = P(A) × P(B)</div>
+      <div class="formula-desc">Both events happen. Events are independent (one doesn't affect other).</div>
+      <div class="formula-use">🔑 "Both red" → P(red) × P(red) = multiply</div>
+    </div>
+    <div class="formula-card">
+      <div class="formula-name">OR Rule</div>
+      <div class="formula-eq">P(A∪B) = P(A)+P(B)−P(A∩B)</div>
+      <div class="formula-desc">Either A or B happens. Subtract intersection to avoid double counting.</div>
+      <div class="formula-use">🔑 "Either... or..." → OR rule</div>
+    </div>
+    <div class="formula-card">
+      <div class="formula-name">Mutually Exclusive</div>
+      <div class="formula-eq">P(A∪B) = P(A) + P(B)</div>
+      <div class="formula-desc">Events that can't happen together (coin: head OR tail). P(A∩B) = 0.</div>
+      <div class="formula-use">🔑 Head and Tail can't both occur simultaneously</div>
+    </div>
+    <div class="formula-card">
+      <div class="formula-name">At Least One</div>
+      <div class="formula-eq">P(at least 1) = 1 − P(none)</div>
+      <div class="formula-desc">Find probability of NONE happening, subtract from 1. Much easier!</div>
+      <div class="formula-use">💡 "At least one" → always use 1−P(none)</div>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-title"><span class="icon icon-purple">🔍</span>Quick Reference — Common Scenarios</div>
+  <table class="fraction-table">
+    <tr><th>Scenario</th><th>Total Outcomes</th><th>Example</th></tr>
+    <tr><td>Single Die</td><td>6</td><td>P(getting 4) = 1/6</td></tr>
+    <tr><td>Two Dice</td><td>36</td><td>P(sum=7) = 6/36 = 1/6</td></tr>
+    <tr><td>Single Coin</td><td>2</td><td>P(Head) = 1/2</td></tr>
+    <tr><td>Two Coins</td><td>4</td><td>P(both heads) = 1/4</td></tr>
+    <tr><td>Three Coins</td><td>8</td><td>P(2 heads) = 3/8</td></tr>
+    <tr><td>52 Card Deck</td><td>52</td><td>P(Ace) = 4/52 = 1/13</td></tr>
+    <tr><td>Red cards</td><td>26 of 52</td><td>P(Red) = 26/52 = 1/2</td></tr>
+    <tr><td>Face cards</td><td>12 of 52</td><td>P(Face) = 12/52 = 3/13</td></tr>
+  </table>
+</div>
+
+<div class="section">
+  <div class="section-title"><span class="icon icon-green">⚡</span>Tricks & Shortcuts</div>
+  <div class="trick-box">
+    <div class="trick-title">🔥 "At Least One" Shortcut</div>
+    <div class="trick-content">
+      Question: Probability of getting at least one Head in 3 coin tosses?<br>
+      SLOW way: P(1H) + P(2H) + P(3H) = 3/8 + 3/8 + 1/8 = 7/8<br>
+      FAST way: 1 − P(no heads) = 1 − (1/2)³ = 1 − 1/8 = <code>7/8</code><br>
+      Always use the complement for "at least one" questions!
+    </div>
+  </div>
+  <div class="trick-box">
+    <div class="trick-title">🔥 Card Deck — Memorize These Numbers</div>
+    <div class="trick-content">
+      Total = <code>52</code> | Suits = 4 (♠ ♥ ♦ ♣) | Each suit = 13 cards<br>
+      Aces = <code>4</code> | Face cards (J,Q,K) = <code>12</code> | Number cards = 36<br>
+      Red (♥♦) = <code>26</code> | Black (♠♣) = <code>26</code>
+    </div>
+  </div>
+  <div class="warn-box">
+    <div class="warn-title">❌ Common Mistakes</div>
+    <strong>WRONG:</strong> P(A or B) = P(A) + P(B) always ❌ (only for mutually exclusive!)<br>
+    <strong>RIGHT:</strong> P(A∪B) = P(A) + P(B) − P(A∩B) ✅<br><br>
+    <strong>WRONG:</strong> Probability can be more than 1 ❌<br>
+    <strong>RIGHT:</strong> Probability is always between 0 and 1 ✅
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-title"><span class="icon icon-pink">🃏</span>Flashcards</div>
+  <div class="flashcard-container">
+    <div class="flashcard" onclick="this.classList.toggle('flipped')">
+      <div class="flashcard-inner">
+        <div class="flashcard-front">P(Head) when flipping a coin?</div>
+        <div class="flashcard-back">1/2 = 0.5</div>
+      </div>
+    </div>
+    <div class="flashcard" onclick="this.classList.toggle('flipped')">
+      <div class="flashcard-inner">
+        <div class="flashcard-front">P(not E) in terms of P(E)?</div>
+        <div class="flashcard-back">P(not E) = 1 − P(E)</div>
+      </div>
+    </div>
+    <div class="flashcard" onclick="this.classList.toggle('flipped')">
+      <div class="flashcard-inner">
+        <div class="flashcard-front">P(at least one head in 3 tosses)?</div>
+        <div class="flashcard-back">1 − P(no heads)<br>= 1 − (1/2)³ = 7/8</div>
+      </div>
+    </div>
+    <div class="flashcard" onclick="this.classList.toggle('flipped')">
+      <div class="flashcard-inner">
+        <div class="flashcard-front">How many face cards in a deck?</div>
+        <div class="flashcard-back">12 (J, Q, K in all 4 suits)</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-title"><span class="icon icon-purple">🧠</span>Interactive Q&A</div>
+  <div class="question-card">
+    <div class="q-num">QUESTION 1 — EASY</div>
+    <div class="q-text">A die is thrown once. What is the probability of getting an even number?</div>
+    <div class="options">
+      <button class="option-btn" onclick="selectOption(this,'q1',false)">A) 1/6</button>
+      <button class="option-btn" onclick="selectOption(this,'q1',false)">B) 1/3</button>
+      <button class="option-btn" onclick="selectOption(this,'q1',true)">C) 1/2</button>
+      <button class="option-btn" onclick="selectOption(this,'q1',false)">D) 2/3</button>
+    </div>
+    <button class="reveal-btn" onclick="toggleReveal('r1')">📖 Show Solution</button>
+    <div class="answer-reveal" id="r1">
+      <strong>✅ C) 1/2</strong><br><br>
+      Even numbers on die: {2, 4, 6} = 3 outcomes<br>
+      Total outcomes = 6<br>
+      P(even) = 3/6 = <strong>1/2</strong>
+    </div>
+  </div>
+  <div class="question-card">
+    <div class="q-num">QUESTION 2 — MODERATE</div>
+    <div class="q-text">A bag has 3 red and 5 blue balls. Two balls drawn at random. P(both red)?</div>
+    <div class="options">
+      <button class="option-btn" onclick="selectOption(this,'q2',false)">A) 9/64</button>
+      <button class="option-btn" onclick="selectOption(this,'q2',false)">B) 3/28</button>
+      <button class="option-btn" onclick="selectOption(this,'q2',true)">C) 3/28</button>
+      <button class="option-btn" onclick="selectOption(this,'q2',false)">D) 6/28</button>
+    </div>
+    <button class="reveal-btn" onclick="toggleReveal('r2')">📖 Show Solution</button>
+    <div class="answer-reveal" id="r2">
+      <strong>✅ C) 3/28</strong><br><br>
+      P(both red) = 3C2 / 8C2<br>
+      = 3 / 28 = <strong>3/28</strong>
+    </div>
+  </div>
+  <div class="question-card">
+    <div class="q-num">QUESTION 3 — EXAM MODERATE</div>
+    <div class="q-text">Two coins are tossed. What is the probability of getting at least one tail?</div>
+    <div class="options">
+      <button class="option-btn" onclick="selectOption(this,'q3',false)">A) 1/4</button>
+      <button class="option-btn" onclick="selectOption(this,'q3',false)">B) 1/2</button>
+      <button class="option-btn" onclick="selectOption(this,'q3',true)">C) 3/4</button>
+      <button class="option-btn" onclick="selectOption(this,'q3',false)">D) 1</button>
+    </div>
+    <button class="reveal-btn" onclick="toggleReveal('r3')">📖 Show Solution</button>
+    <div class="answer-reveal" id="r3">
+      <strong>✅ C) 3/4</strong><br><br>
+      Method: 1 − P(no tails) = 1 − P(both heads)<br>
+      P(both heads) = (1/2)×(1/2) = 1/4<br>
+      P(at least one tail) = 1 − 1/4 = <strong>3/4</strong>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-title"><span class="icon icon-gold">📋</span>Quick Revision Matrix</div>
+  <table class="matrix-table">
+    <tr><th>Formula</th><th>When to Use</th><th>Key Trick</th><th>Difficulty</th><th>Hexaware Weight</th></tr>
+    <tr><td>Fav/Total</td><td>Basic probability</td><td>Count outcomes carefully</td><td class="difficulty-easy">Easy</td><td>⭐⭐⭐⭐⭐</td></tr>
+    <tr><td>1−P(E)</td><td>"NOT" happening</td><td>Complement rule</td><td class="difficulty-easy">Easy</td><td>⭐⭐⭐⭐</td></tr>
+    <tr><td>P(A)×P(B)</td><td>Both events, independent</td><td>AND = multiply</td><td class="difficulty-med">Medium</td><td>⭐⭐⭐⭐</td></tr>
+    <tr><td>P(A)+P(B)−P(A∩B)</td><td>Either event</td><td>OR = add, subtract intersection</td><td class="difficulty-med">Medium</td><td>⭐⭐⭐⭐</td></tr>
+    <tr><td>1−P(none)</td><td>"At least one"</td><td>Fastest shortcut</td><td class="difficulty-med">Medium</td><td>⭐⭐⭐⭐⭐</td></tr>
+  </table>
+</div>
+
+<div class="progress-footer">
+  <h3>📊 Day-1 Progress</h3>
+  <div style="display:flex;justify-content:space-between;margin-bottom:8px;">
+    <span style="color:var(--text2);font-size:0.9rem;">9 of 14 topics completed</span>
+    <span style="color:var(--accent3);font-weight:700;">64%</span>
+  </div>
+  <div class="progress-bar-outer"><div class="progress-bar-inner" style="width:64%"></div></div>
+  <a href="topic_clock.html" class="next-topic-btn">Next Topic: Clock & Calendar →</a>
+</div>
+</div>
+<script>
+function selectOption(btn,qId,isCorrect){
+  const p=btn.closest('.question-card');
+  p.querySelectorAll('.option-btn').forEach(b=>{b.classList.remove('correct','wrong');b.disabled=true;});
+  btn.classList.add(isCorrect?'correct':'wrong');
+  if(!isCorrect){p.querySelectorAll('.option-btn').forEach(b=>{if(b.onclick.toString().includes('true'))b.classList.add('correct');});}
+}
+function toggleReveal(id){document.getElementById(id).classList.toggle('show');}
+</script>
+</body>
+</html>

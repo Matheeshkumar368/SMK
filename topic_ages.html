@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Topic 11: Problems on Ages | Hexaware Day-1</title>
+<link rel="stylesheet" href="shared_styles.css">
+</head>
+<body>
+<div class="container">
+<nav class="top-nav">
+  <div class="nav-brand">🎯 Hexaware Aptitude Master</div>
+  <div class="nav-links">
+    <a href="dashboard.html" class="nav-btn home">🏠 Dashboard</a>
+    <a href="topic_clock.html" class="nav-btn">← Clock & Calendar</a>
+    <a href="topic_geometry.html" class="nav-btn">Next: Geometry →</a>
+  </div>
+</nav>
+<div class="hero">
+  <div class="hero-badge">📊 Topic 11 of 28 &nbsp;|&nbsp; DAY 1</div>
+  <h1>PROBLEMS ON <span>AGES</span></h1>
+  <p>Highest scoring, easiest topic. Just remember 3 rules: AGO → Subtract, HENCE → Add, Difference NEVER changes. If you know Ratio & Average, 70% of this topic is already done.</p>
+  <div class="hero-stats">
+    <div class="stat-chip"><div class="val">⭐⭐</div><div class="lbl">Weightage</div></div>
+    <div class="stat-chip"><div class="val">VERY EASY</div><div class="lbl">Difficulty</div></div>
+    <div class="stat-chip"><div class="val">20s</div><div class="lbl">Per Question</div></div>
+    <div class="stat-chip"><div class="val">MEDIUM</div><div class="lbl">Hexaware Freq</div></div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-title"><span class="icon icon-purple">🔍</span>The 3 Golden Rules — Memorize Forever</div>
+  <div class="svg-container">
+    <svg width="580" height="150" viewBox="0 0 580 150" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="ag1" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" style="stop-color:#6c63ff"/><stop offset="100%" style="stop-color:#8b5cf6"/></linearGradient>
+        <linearGradient id="ag2" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" style="stop-color:#ff6584"/><stop offset="100%" style="stop-color:#ff8fa0"/></linearGradient>
+        <linearGradient id="ag3" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" style="stop-color:#43e97b"/><stop offset="100%" style="stop-color:#38f9d7"/></linearGradient>
+        <filter id="agf"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-opacity="0.3"/></filter>
+      </defs>
+      <rect x="10" y="30" width="165" height="90" rx="14" fill="url(#ag1)" filter="url(#agf)"/>
+      <text x="93" y="60" text-anchor="middle" fill="white" font-size="13" font-weight="bold">AGO</text>
+      <text x="93" y="85" text-anchor="middle" fill="white" font-size="26" font-weight="900">−</text>
+      <text x="93" y="110" text-anchor="middle" fill="rgba(255,255,255,0.7)" font-size="11">SUBTRACT years</text>
+      <rect x="207" y="30" width="166" height="90" rx="14" fill="url(#ag2)" filter="url(#agf)"/>
+      <text x="290" y="60" text-anchor="middle" fill="white" font-size="13" font-weight="bold">HENCE / LATER</text>
+      <text x="290" y="85" text-anchor="middle" fill="white" font-size="26" font-weight="900">+</text>
+      <text x="290" y="110" text-anchor="middle" fill="rgba(255,255,255,0.7)" font-size="11">ADD years</text>
+      <rect x="403" y="30" width="167" height="90" rx="14" fill="url(#ag3)" filter="url(#agf)"/>
+      <text x="487" y="60" text-anchor="middle" fill="#0a0a0f" font-size="12" font-weight="bold">DIFFERENCE</text>
+      <text x="487" y="80" text-anchor="middle" fill="#0a0a0f" font-size="14" font-weight="bold">NEVER CHANGES</text>
+      <text x="487" y="108" text-anchor="middle" fill="rgba(0,0,0,0.6)" font-size="11">Age gap = Constant</text>
+    </svg>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-title"><span class="icon icon-gold">📐</span>All Formulas</div>
+  <div class="formula-grid">
+    <div class="formula-card">
+      <div class="formula-name">Formula 1 — X Years Ago</div>
+      <div class="formula-eq">Age at that time = Present − X</div>
+      <div class="formula-desc">10 years ago → subtract 10 from current age.</div>
+      <div class="formula-use">🔑 Present age 25, 5 years ago = 25−5 = 20</div>
+    </div>
+    <div class="formula-card">
+      <div class="formula-name">Formula 2 — X Years Hence</div>
+      <div class="formula-eq">Future age = Present + X</div>
+      <div class="formula-desc">10 years hence/later → add 10 to current age.</div>
+      <div class="formula-use">🔑 Present age 30, after 10 years = 30+10 = 40</div>
+    </div>
+    <div class="formula-card">
+      <div class="formula-name">Formula 3 — Difference Rule</div>
+      <div class="formula-eq">Age difference is CONSTANT</div>
+      <div class="formula-desc">If father is 30 years older than son, this stays 30 years forever.</div>
+      <div class="formula-use">🔑 Hexaware's favourite trap — "After 20 years, difference?" Same!</div>
+    </div>
+    <div class="formula-card">
+      <div class="formula-name">Formula 4 — Ratio Questions</div>
+      <div class="formula-eq">Part = ratio/(sum) × Total</div>
+      <div class="formula-desc">When ages are in ratio x:y, use ratio formula to find individual ages.</div>
+      <div class="formula-use">🔑 Father:Son = 5:2, total 56 → Father = 5/7 × 56 = 40</div>
+    </div>
+    <div class="formula-card">
+      <div class="formula-name">Formula 5 — Average Age</div>
+      <div class="formula-eq">Total age = Avg × Count</div>
+      <div class="formula-desc">Find total age from average, then use individual differences.</div>
+      <div class="formula-use">🔑 Average age 20, 5 people → Total = 100 years</div>
+    </div>
+    <div class="formula-card">
+      <div class="formula-name">Formula 6 — n times as old</div>
+      <div class="formula-eq">A = n × B (present) | Solve for X years</div>
+      <div class="formula-desc">Set up present age equation, then apply +/- for past/future conditions.</div>
+      <div class="formula-use">🔑 "Father is 3 times son's age" → F = 3S</div>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-title"><span class="icon icon-green">⚡</span>Smart Tricks</div>
+  <div class="trick-box">
+    <div class="trick-title">🔥 Difference Never Changes — 3 Second Solver</div>
+    <div class="trick-content">
+      Q: Father's age is 40, son's age is 10. What will be the difference after 20 years?<br>
+      WRONG WAY: Calculate 40+20=60, 10+20=30, difference=30...<br>
+      RIGHT WAY: <code>Difference NEVER changes = 40−10 = 30</code><br>
+      Answer in 3 seconds without any calculation!
+    </div>
+  </div>
+  <div class="trick-box">
+    <div class="trick-title">🔥 Smart Option Elimination</div>
+    <div class="trick-content">
+      For "age X years hence" questions, the answer MUST be greater than current age.<br>
+      For "age X years ago" questions, the answer MUST be less than current age.<br>
+      Eliminate options that violate common sense immediately — saves 30 seconds!
+    </div>
+  </div>
+  <div class="warn-box">
+    <div class="warn-title">❌ Never Confuse Ago and Hence</div>
+    <strong>WRONG:</strong> "10 years ago" → ADD 10 to present age ❌<br>
+    <strong>RIGHT:</strong> "10 years ago" → SUBTRACT 10 ✅<br><br>
+    <strong>WRONG:</strong> Father is 30 years older. After 20 years, difference = 50 years ❌<br>
+    <strong>RIGHT:</strong> Difference NEVER changes = 30 years ✅
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-title"><span class="icon icon-pink">🃏</span>Flashcards</div>
+  <div class="flashcard-container">
+    <div class="flashcard" onclick="this.classList.toggle('flipped')">
+      <div class="flashcard-inner">
+        <div class="flashcard-front">5 years ago, if present age is 25?</div>
+        <div class="flashcard-back">25 − 5 = 20 years<br>AGO → SUBTRACT</div>
+      </div>
+    </div>
+    <div class="flashcard" onclick="this.classList.toggle('flipped')">
+      <div class="flashcard-inner">
+        <div class="flashcard-front">After 10 years, if present age is 30?</div>
+        <div class="flashcard-back">30 + 10 = 40 years<br>HENCE → ADD</div>
+      </div>
+    </div>
+    <div class="flashcard" onclick="this.classList.toggle('flipped')">
+      <div class="flashcard-inner">
+        <div class="flashcard-front">Father 40, Son 10. Difference after 15 years?</div>
+        <div class="flashcard-back">30 (unchanged!)<br>Difference NEVER changes</div>
+      </div>
+    </div>
+    <div class="flashcard" onclick="this.classList.toggle('flipped')">
+      <div class="flashcard-inner">
+        <div class="flashcard-front">F:S = 5:2, total age 56. Father's age?</div>
+        <div class="flashcard-back">5/7 × 56 = 40 years</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-title"><span class="icon icon-purple">🧠</span>Interactive Q&A</div>
+  <div class="question-card">
+    <div class="q-num">QUESTION 1 — EASY</div>
+    <div class="q-text">The present age of A is 36 years. 6 years hence, what will be A's age?</div>
+    <div class="options">
+      <button class="option-btn" onclick="selectOption(this,'q1',false)">A) 30</button>
+      <button class="option-btn" onclick="selectOption(this,'q1',false)">B) 38</button>
+      <button class="option-btn" onclick="selectOption(this,'q1',true)">C) 42</button>
+      <button class="option-btn" onclick="selectOption(this,'q1',false)">D) 40</button>
+    </div>
+    <button class="reveal-btn" onclick="toggleReveal('r1')">📖 Show Solution</button>
+    <div class="answer-reveal" id="r1">
+      <strong>✅ C) 42</strong><br><br>
+      "Hence" → ADD<br>
+      36 + 6 = <strong>42 years</strong>
+    </div>
+  </div>
+  <div class="question-card">
+    <div class="q-num">QUESTION 2 — MODERATE</div>
+    <div class="q-text">Father's age is 4 times son's age. After 20 years, father will be twice son's age. What is son's current age?</div>
+    <div class="options">
+      <button class="option-btn" onclick="selectOption(this,'q2',false)">A) 5</button>
+      <button class="option-btn" onclick="selectOption(this,'q2',false)">B) 8</button>
+      <button class="option-btn" onclick="selectOption(this,'q2',true)">C) 10</button>
+      <button class="option-btn" onclick="selectOption(this,'q2',false)">D) 12</button>
+    </div>
+    <button class="reveal-btn" onclick="toggleReveal('r2')">📖 Show Solution</button>
+    <div class="answer-reveal" id="r2">
+      <strong>✅ C) 10</strong><br><br>
+      Let son's age = x, Father = 4x<br>
+      After 20 years: 4x+20 = 2(x+20)<br>
+      4x+20 = 2x+40 → 2x = 20 → x = <strong>10</strong>
+    </div>
+  </div>
+  <div class="question-card">
+    <div class="q-num">QUESTION 3 — EXAM MODERATE</div>
+    <div class="q-text">Hexaware Trap: A is 20 years older than B. After 10 years, what will be the difference between their ages?</div>
+    <div class="options">
+      <button class="option-btn" onclick="selectOption(this,'q3',false)">A) 30 years</button>
+      <button class="option-btn" onclick="selectOption(this,'q3',false)">B) 10 years</button>
+      <button class="option-btn" onclick="selectOption(this,'q3',true)">C) 20 years</button>
+      <button class="option-btn" onclick="selectOption(this,'q3',false)">D) 25 years</button>
+    </div>
+    <button class="reveal-btn" onclick="toggleReveal('r3')">📖 Show Solution</button>
+    <div class="answer-reveal" id="r3">
+      <strong>✅ C) 20 years</strong><br><br>
+      Age DIFFERENCE never changes!<br>
+      A is currently 20 years older than B → This remains <strong>20 years</strong> after any number of years.<br>
+      ⚠️ This is the most popular trap question from this topic!
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-title"><span class="icon icon-gold">📋</span>Quick Revision Matrix</div>
+  <table class="matrix-table">
+    <tr><th>Formula</th><th>When to Use</th><th>Key Rule</th><th>Difficulty</th><th>Hexaware Weight</th></tr>
+    <tr><td>Present − X</td><td>X years ago</td><td>AGO = Subtract</td><td class="difficulty-easy">Easy</td><td>⭐⭐⭐⭐</td></tr>
+    <tr><td>Present + X</td><td>X years hence</td><td>HENCE = Add</td><td class="difficulty-easy">Easy</td><td>⭐⭐⭐⭐</td></tr>
+    <tr><td>Constant</td><td>Age difference questions</td><td>NEVER changes</td><td class="difficulty-easy">Easy</td><td>⭐⭐⭐⭐⭐</td></tr>
+    <tr><td>a/(a+b)×T</td><td>Ratio age questions</td><td>Ratio method</td><td class="difficulty-med">Medium</td><td>⭐⭐⭐</td></tr>
+    <tr><td>Avg×Count</td><td>Average age questions</td><td>Find total first</td><td class="difficulty-easy">Easy</td><td>⭐⭐⭐</td></tr>
+  </table>
+</div>
+
+<div class="progress-footer">
+  <h3>📊 Day-1 Progress</h3>
+  <div style="display:flex;justify-content:space-between;margin-bottom:8px;">
+    <span style="color:var(--text2);font-size:0.9rem;">11 of 14 topics completed</span>
+    <span style="color:var(--accent3);font-weight:700;">78%</span>
+  </div>
+  <div class="progress-bar-outer"><div class="progress-bar-inner" style="width:78%"></div></div>
+  <a href="topic_geometry.html" class="next-topic-btn">Next Topic: Geometry & Mensuration →</a>
+</div>
+</div>
+<script>
+function selectOption(btn,qId,isCorrect){
+  const p=btn.closest('.question-card');
+  p.querySelectorAll('.option-btn').forEach(b=>{b.classList.remove('correct','wrong');b.disabled=true;});
+  btn.classList.add(isCorrect?'correct':'wrong');
+  if(!isCorrect){p.querySelectorAll('.option-btn').forEach(b=>{if(b.onclick.toString().includes('true'))b.classList.add('correct');});}
+}
+function toggleReveal(id){document.getElementById(id).classList.toggle('show');}
+</script>
+</body>
+</html>

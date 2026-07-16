@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Topic 8: Permutation & Combination | Hexaware Day-1</title>
+<link rel="stylesheet" href="shared_styles.css">
+</head>
+<body>
+<div class="container">
+<nav class="top-nav">
+  <div class="nav-brand">🎯 Hexaware Aptitude Master</div>
+  <div class="nav-links">
+    <a href="dashboard.html" class="nav-btn home">🏠 Dashboard</a>
+    <a href="topic_tsd.html" class="nav-btn">← TSD</a>
+    <a href="topic_probability.html" class="nav-btn">Next: Probability →</a>
+  </div>
+</nav>
+<div class="hero">
+  <div class="hero-badge">📊 Topic 8 of 28 &nbsp;|&nbsp; DAY 1</div>
+  <h1>PERMUTATION & <span>COMBINATION</span></h1>
+  <p>The single most important question: Is ORDER important? YES → Permutation. NO → Combination. That one question eliminates 70% of confusion. Master the two formulas and the circular rule.</p>
+  <div class="hero-stats">
+    <div class="stat-chip"><div class="val">⭐⭐⭐</div><div class="lbl">Weightage</div></div>
+    <div class="stat-chip"><div class="val">MEDIUM</div><div class="lbl">Difficulty</div></div>
+    <div class="stat-chip"><div class="val">45s</div><div class="lbl">Per Question</div></div>
+    <div class="stat-chip"><div class="val">HIGH</div><div class="lbl">Hexaware Freq</div></div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-title"><span class="icon icon-purple">🔍</span>The Decision Tree — Most Important</div>
+  <div class="svg-container">
+    <svg width="580" height="220" viewBox="0 0 580 220" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="pc1" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" style="stop-color:#6c63ff"/><stop offset="100%" style="stop-color:#8b5cf6"/></linearGradient>
+        <linearGradient id="pc2" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" style="stop-color:#43e97b"/><stop offset="100%" style="stop-color:#38f9d7"/></linearGradient>
+        <linearGradient id="pc3" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" style="stop-color:#ff6584"/><stop offset="100%" style="stop-color:#ff8fa0"/></linearGradient>
+        <filter id="pcf"><feDropShadow dx="0" dy="3" stdDeviation="5" flood-opacity="0.3"/></filter>
+      </defs>
+      <rect x="185" y="10" width="210" height="55" rx="12" fill="url(#pc1)" filter="url(#pcf)"/>
+      <text x="290" y="35" text-anchor="middle" fill="white" font-size="14" font-weight="bold">Is ORDER important?</text>
+      <text x="290" y="55" text-anchor="middle" fill="rgba(255,255,255,0.7)" font-size="12">(Arrangement, Position, Rank)</text>
+      <line x1="220" y1="65" x2="130" y2="130" stroke="#43e97b" stroke-width="2.5"/>
+      <line x1="360" y1="65" x2="450" y2="130" stroke="#ff6584" stroke-width="2.5"/>
+      <rect x="110" y="128" width="40" height="20" rx="8" fill="rgba(67,233,123,0.3)"/>
+      <text x="130" y="143" text-anchor="middle" fill="#43e97b" font-size="12" font-weight="bold">YES</text>
+      <rect x="430" y="128" width="40" height="20" rx="8" fill="rgba(255,101,132,0.3)"/>
+      <text x="450" y="143" text-anchor="middle" fill="#ff6584" font-size="12" font-weight="bold">NO</text>
+      <rect x="30" y="155" width="200" height="55" rx="12" fill="url(#pc2)" filter="url(#pcf)"/>
+      <text x="130" y="178" text-anchor="middle" fill="#0a0a0f" font-size="14" font-weight="bold">PERMUTATION</text>
+      <text x="130" y="198" text-anchor="middle" fill="#0a0a0f" font-size="11">nPr = n! / (n−r)!</text>
+      <rect x="350" y="155" width="200" height="55" rx="12" fill="url(#pc3)" filter="url(#pcf)"/>
+      <text x="450" y="178" text-anchor="middle" fill="white" font-size="14" font-weight="bold">COMBINATION</text>
+      <text x="450" y="198" text-anchor="middle" fill="white" font-size="11">nCr = n! / r!(n−r)!</text>
+    </svg>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-title"><span class="icon icon-gold">📐</span>All Formulas</div>
+  <div class="formula-grid">
+    <div class="formula-card">
+      <div class="formula-name">Permutation — Order Matters</div>
+      <div class="formula-eq">nPr = n! / (n−r)!</div>
+      <div class="formula-desc">Arranging r items from n. Each different arrangement is unique.</div>
+      <div class="formula-use">🔑 Keywords: arrange, seating, password, rank, positions</div>
+    </div>
+    <div class="formula-card">
+      <div class="formula-name">Combination — Order Doesn't Matter</div>
+      <div class="formula-eq">nCr = n! / [r!(n−r)!]</div>
+      <div class="formula-desc">Selecting r items from n. AB and BA are the SAME selection.</div>
+      <div class="formula-use">🔑 Keywords: select, choose, committee, team, group</div>
+    </div>
+    <div class="formula-card">
+      <div class="formula-name">Circular Arrangement</div>
+      <div class="formula-eq">(n−1)!</div>
+      <div class="formula-desc">Arrange n people around a circular table. One position is fixed.</div>
+      <div class="formula-use">🔑 5 people at round table = 4! = 24 ways</div>
+    </div>
+    <div class="formula-card">
+      <div class="formula-name">Factorial Values — Memorize!</div>
+      <div class="formula-eq">0!=1, 1!=1, 2!=2, 3!=6, 4!=24, 5!=120</div>
+      <div class="formula-desc">6!=720, 7!=5040. These come up constantly — don't calculate, memorize!</div>
+      <div class="formula-use">⚠️ 0! = 1 (NOT 0 — very common mistake!)</div>
+    </div>
+    <div class="formula-card">
+      <div class="formula-name">Repeated Letters</div>
+      <div class="formula-eq">n! / (p! × q! × ...)</div>
+      <div class="formula-desc">Divide by factorial of each repeated letter count.</div>
+      <div class="formula-use">🔑 AAB: 3!/2! = 3 | MISSISSIPPI: 11!/(4!×4!×2!)</div>
+    </div>
+    <div class="formula-card">
+      <div class="formula-name">Key Relationship</div>
+      <div class="formula-eq">nPr = nCr × r!</div>
+      <div class="formula-desc">Permutation = Combination × Ways to arrange. Selection × Arrangement.</div>
+      <div class="formula-use">💡 Helps when switching between P and C questions</div>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-title"><span class="icon icon-green">⚡</span>Shortcuts & Keyword Triggers</div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+    <div>
+      <p style="color:var(--accent);font-weight:700;margin-bottom:12px;">PERMUTATION Keywords</p>
+      <div class="keyword-grid" style="grid-template-columns:1fr 1fr;">
+        <div class="keyword-chip" style="background:rgba(67,233,123,0.1);border-color:rgba(67,233,123,0.3)"><div class="kw" style="color:var(--accent3)">Arrange</div></div>
+        <div class="keyword-chip" style="background:rgba(67,233,123,0.1);border-color:rgba(67,233,123,0.3)"><div class="kw" style="color:var(--accent3)">Seating</div></div>
+        <div class="keyword-chip" style="background:rgba(67,233,123,0.1);border-color:rgba(67,233,123,0.3)"><div class="kw" style="color:var(--accent3)">Password</div></div>
+        <div class="keyword-chip" style="background:rgba(67,233,123,0.1);border-color:rgba(67,233,123,0.3)"><div class="kw" style="color:var(--accent3)">Rank/Position</div></div>
+        <div class="keyword-chip" style="background:rgba(67,233,123,0.1);border-color:rgba(67,233,123,0.3)"><div class="kw" style="color:var(--accent3)">Order</div></div>
+        <div class="keyword-chip" style="background:rgba(67,233,123,0.1);border-color:rgba(67,233,123,0.3)"><div class="kw" style="color:var(--accent3)">Number form</div></div>
+      </div>
+    </div>
+    <div>
+      <p style="color:var(--accent2);font-weight:700;margin-bottom:12px;">COMBINATION Keywords</p>
+      <div class="keyword-grid" style="grid-template-columns:1fr 1fr;">
+        <div class="keyword-chip"><div class="kw">Select</div></div>
+        <div class="keyword-chip"><div class="kw">Choose</div></div>
+        <div class="keyword-chip"><div class="kw">Committee</div></div>
+        <div class="keyword-chip"><div class="kw">Team</div></div>
+        <div class="keyword-chip"><div class="kw">Group</div></div>
+        <div class="keyword-chip"><div class="kw">Members</div></div>
+      </div>
+    </div>
+  </div>
+  <div class="warn-box" style="margin-top:16px;">
+    <div class="warn-title">❌ Most Common Mistakes</div>
+    <strong>WRONG:</strong> Team Selection → use Permutation ❌ (Team has no order!)<br>
+    <strong>RIGHT:</strong> Team Selection → Combination ✅<br><br>
+    <strong>WRONG:</strong> 0! = 0 ❌<br>
+    <strong>RIGHT:</strong> 0! = 1 ✅ (Definition — always memorize this!)
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-title"><span class="icon icon-pink">🃏</span>Flashcards</div>
+  <div class="flashcard-container">
+    <div class="flashcard" onclick="this.classList.toggle('flipped')">
+      <div class="flashcard-inner">
+        <div class="flashcard-front">Arrange 3 books from 8 books. Which formula?</div>
+        <div class="flashcard-back">PERMUTATION<br>8P3 = 8!/(8−3)! = 336</div>
+      </div>
+    </div>
+    <div class="flashcard" onclick="this.classList.toggle('flipped')">
+      <div class="flashcard-inner">
+        <div class="flashcard-front">Select 3 students from 10. Which formula?</div>
+        <div class="flashcard-back">COMBINATION<br>10C3 = 120</div>
+      </div>
+    </div>
+    <div class="flashcard" onclick="this.classList.toggle('flipped')">
+      <div class="flashcard-inner">
+        <div class="flashcard-front">5 people at a round table?</div>
+        <div class="flashcard-back">(5−1)! = 4! = 24 ways</div>
+      </div>
+    </div>
+    <div class="flashcard" onclick="this.classList.toggle('flipped')">
+      <div class="flashcard-inner">
+        <div class="flashcard-front">Value of 0! ?</div>
+        <div class="flashcard-back">0! = 1<br>(NOT zero!)</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-title"><span class="icon icon-purple">🧠</span>Interactive Q&A</div>
+  <div class="question-card">
+    <div class="q-num">QUESTION 1 — EASY</div>
+    <div class="q-text">In how many ways can 3 students be selected from a class of 7?</div>
+    <div class="options">
+      <button class="option-btn" onclick="selectOption(this,'q1',false)">A) 21</button>
+      <button class="option-btn" onclick="selectOption(this,'q1',true)">B) 35</button>
+      <button class="option-btn" onclick="selectOption(this,'q1',false)">C) 42</button>
+      <button class="option-btn" onclick="selectOption(this,'q1',false)">D) 210</button>
+    </div>
+    <button class="reveal-btn" onclick="toggleReveal('r1')">📖 Show Solution</button>
+    <div class="answer-reveal" id="r1">
+      <strong>✅ B) 35</strong><br><br>
+      "Selected" → ORDER DOESN'T MATTER → COMBINATION<br>
+      7C3 = 7! / (3! × 4!) = (7×6×5) / (3×2×1) = 210/6 = <strong>35</strong>
+    </div>
+  </div>
+  <div class="question-card">
+    <div class="q-num">QUESTION 2 — MODERATE</div>
+    <div class="q-text">In how many ways can 4 people be seated in a row of 4 chairs?</div>
+    <div class="options">
+      <button class="option-btn" onclick="selectOption(this,'q2',false)">A) 12</button>
+      <button class="option-btn" onclick="selectOption(this,'q2',false)">B) 16</button>
+      <button class="option-btn" onclick="selectOption(this,'q2',true)">C) 24</button>
+      <button class="option-btn" onclick="selectOption(this,'q2',false)">D) 36</button>
+    </div>
+    <button class="reveal-btn" onclick="toggleReveal('r2')">📖 Show Solution</button>
+    <div class="answer-reveal" id="r2">
+      <strong>✅ C) 24</strong><br><br>
+      "Seated in a row" → ORDER MATTERS → PERMUTATION<br>
+      4P4 = 4! = 4×3×2×1 = <strong>24</strong>
+    </div>
+  </div>
+  <div class="question-card">
+    <div class="q-num">QUESTION 3 — EXAM MODERATE</div>
+    <div class="q-text">How many ways can 5 people sit around a circular table?</div>
+    <div class="options">
+      <button class="option-btn" onclick="selectOption(this,'q3',false)">A) 120</button>
+      <button class="option-btn" onclick="selectOption(this,'q3',true)">B) 24</button>
+      <button class="option-btn" onclick="selectOption(this,'q3',false)">C) 60</button>
+      <button class="option-btn" onclick="selectOption(this,'q3',false)">D) 48</button>
+    </div>
+    <button class="reveal-btn" onclick="toggleReveal('r3')">📖 Show Solution</button>
+    <div class="answer-reveal" id="r3">
+      <strong>✅ B) 24</strong><br><br>
+      Circular arrangement formula: (n−1)!<br>
+      = (5−1)! = 4! = 4×3×2×1 = <strong>24</strong><br>
+      Note: In circular, one person's position is fixed, others arrange around them.
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-title"><span class="icon icon-gold">📋</span>Quick Revision Matrix</div>
+  <table class="matrix-table">
+    <tr><th>Formula</th><th>When to Use</th><th>Key Rule</th><th>Difficulty</th><th>Hexaware Weight</th></tr>
+    <tr><td>nPr = n!/(n−r)!</td><td>Arrange r from n</td><td>Order MATTERS</td><td class="difficulty-med">Medium</td><td>⭐⭐⭐⭐</td></tr>
+    <tr><td>nCr = n!/r!(n−r)!</td><td>Select r from n</td><td>Order doesn't matter</td><td class="difficulty-med">Medium</td><td>⭐⭐⭐⭐⭐</td></tr>
+    <tr><td>(n−1)!</td><td>Circular arrangement</td><td>One seat fixed</td><td class="difficulty-med">Medium</td><td>⭐⭐⭐⭐</td></tr>
+    <tr><td>n!/p!q!</td><td>Repeated letters/items</td><td>Divide by repetitions</td><td class="difficulty-hard">Hard</td><td>⭐⭐⭐</td></tr>
+    <tr><td>0!=1</td><td>Any calculation</td><td>Never 0</td><td class="difficulty-easy">Easy</td><td>⭐⭐⭐⭐⭐</td></tr>
+  </table>
+</div>
+
+<div class="progress-footer">
+  <h3>📊 Day-1 Progress</h3>
+  <div style="display:flex;justify-content:space-between;margin-bottom:8px;">
+    <span style="color:var(--text2);font-size:0.9rem;">8 of 14 topics completed</span>
+    <span style="color:var(--accent3);font-weight:700;">57%</span>
+  </div>
+  <div class="progress-bar-outer"><div class="progress-bar-inner" style="width:57%"></div></div>
+  <a href="topic_probability.html" class="next-topic-btn">Next Topic: Probability →</a>
+</div>
+</div>
+<script>
+function selectOption(btn,qId,isCorrect){
+  const p=btn.closest('.question-card');
+  p.querySelectorAll('.option-btn').forEach(b=>{b.classList.remove('correct','wrong');b.disabled=true;});
+  btn.classList.add(isCorrect?'correct':'wrong');
+  if(!isCorrect){p.querySelectorAll('.option-btn').forEach(b=>{if(b.onclick.toString().includes('true'))b.classList.add('correct');});}
+}
+function toggleReveal(id){document.getElementById(id).classList.toggle('show');}
+</script>
+</body>
+</html>

@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hexaware Day-1 Aptitude Masterclass Dashboard</title>
+    <style>
+        :root {
+            --bg-primary: #f4f7f6;
+            --bg-secondary: #ffffff;
+            --text-primary: #2c3e50;
+            --text-secondary: #7f8c8d;
+            --accent-color: #2980b9;
+            --accent-hover: #3498db;
+            --border-color: #dcdde1;
+            --card-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            --flashcard-bg: #ecf0f1;
+            --success-color: #27ae60;
+        }
+
+        [data-theme="dark"] {
+            --bg-primary: #121212;
+            --bg-secondary: #1e1e1e;
+            --text-primary: #e0e0e0;
+            --text-secondary: #a0a0a0;
+            --accent-color: #3498db;
+            --accent-hover: #2980b9;
+            --border-color: #333333;
+            --card-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            --flashcard-bg: #2c3e50;
+            --success-color: #2ecc71;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        body {
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            display: flex;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        /* Sidebar Styling */
+        #sidebar {
+            width: 320px;
+            background-color: var(--bg-secondary);
+            border-right: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            z-index: 10;
+        }
+
+        .sidebar-header {
+            padding: 20px;
+            border-bottom: 1px solid var(--border-color);
+            text-align: center;
+        }
+
+        .sidebar-header h2 {
+            font-size: 1.2rem;
+            color: var(--accent-color);
+            margin-bottom: 5px;
+        }
+
+        .search-box {
+            padding: 15px;
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 10px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            background: var(--bg-primary);
+            color: var(--text-primary);
+        }
+
+        .topic-list {
+            flex: 1;
+            overflow-y: auto;
+            padding: 10px;
+        }
+
+        .topic-item {
+            padding: 12px 15px;
+            border-radius: 8px;
+            cursor: pointer;
+            margin-bottom: 5px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: transparent;
+        }
+
+        .topic-item:hover, .topic-item.active {
+            background-color: var(--bg-primary);
+            border-left: 4px solid var(--accent-color);
+        }
+
+        .topic-meta {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* Main Workspace Content */
+        #main-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        header {
+            background-color: var(--bg-secondary);
+            border-bottom: 1px solid var(--border-color);
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header-controls {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .btn {
+            padding: 8px 16px;
+            border-radius: 6px;
+            border: 1px solid var(--border-color);
+            background: var(--bg-secondary);
+            color: var(--text-primary);
+            cursor: pointer;
+            font-weight: 600;
+        }
+
+        .btn:hover {
+            background: var(--accent-color);
+            color: white;
+        }
+
+        .btn-accent {
+            background: var(--accent-color);
+            color: white;
+            border: none;
+        }
+
+        .btn-accent:hover {
+            background: var(--accent-hover);
+        }
+
+        /* Progress Bar Wrapper */
+        .progress-container {
+            width: 200px;
+            background: var(--bg-primary);
+            border-radius: 10px;
+            height: 12px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .progress-bar {
+            height: 100%;
+            background: var(--success-color);
+            width: 0%;
+            transition: width 0.4s ease;
+        }
+
+        /* Workspace Panels */
+        .workspace {
+            flex: 1;
+            overflow-y: auto;
+            padding: 30px;
+        }
+
+        .section-card {
+            background: var(--bg-secondary);
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 25px;
+            box-shadow: var(--card-shadow);
+            border: 1px solid var(--border-color);
+        }
+
+        .section-title {
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+            border-bottom: 2px solid var(--accent-color);
+            padding-bottom: 8px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        /* Formula Card Grid */
+        .formula-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .formula-card {
+            background: var(--bg-primary);
+            border-radius: 8px;
+            padding: 20px;
+            border-left: 5px solid var(--accent-color);
+        }
+
+        .formula-display {
+            background: var(--bg-secondary);
+            padding: 12px;
+            border-radius: 6px;
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: bold;
+            margin: 10px 0;
+            overflow-x: auto;
+            border: 1px solid var(--border-color);
+        }
+
+        /* Flashcard Component */
+        .flashcard-wrapper {
+            perspective: 1000px;
+            width: 100%;
+            max-width: 450px;
+            height: 220px;
+            margin: 20px auto;
+        }
+
+        .flashcard {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            transform-style: preserve-3d;
+            transition: transform 0.6s;
+            cursor: pointer;
+        }
+
+        .flashcard.flipped {
+            transform: rotateY(180deg);
+        }
+
+        .card-front, .card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border-radius: 12px;
+            padding: 25px;
+            text-align: center;
+            box-shadow: var(--card-shadow);
+        }
+
+        .card-front {
+            background: var(--accent-color);
+            color: white;
+        }
+
+        .card-back {
+            background: var(--flashcard-bg);
+            color: var(--text-primary);
+            transform: rotateY(180deg);
+            border: 2px solid var(--accent-color);
+        }
+
+        /* Notes Component */
+        .notes-area {
+            width: 100%;
+            height: 120px;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 12px;
+            resize: vertical;
+            margin-top: 10px;
+        }
+
+        /* Table Design */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+        th, td {
+            border: 1px solid var(--border-color);
+            padding: 12px;
+            text-align: left;
+        }
+
+        th {
+            background-color: var(--bg-primary);
+        }
+
+        /* Global Floating Widgets */
+        #floating-timer {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: var(--bg-secondary);
+            padding: 10px 20px;
+            border-radius: 30px;
+            box-shadow: var(--card-shadow);
+            border: 2px solid var(--accent-color);
+            font-weight: bold;
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* Revision Mode Toggles */
+        .revision-hidden {
+            display: none !important;
+        }
+
+        @media(max-width: 768px) {
+            body { flex-direction: column; }
+            #sidebar { width: 100%; height: 250px; }
+            header { padding: 10px; flex-wrap: wrap; gap: 10px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- SIDEBAR WRAPPER -->
+    <div id="sidebar">
+        <div class="sidebar-header">
+            <h2>Hexaware Masterclass</h2>
+            <p style="font-size:0.85rem; color:var(--text-secondary)">Day 1 Strategy Suite</p>
+        </div>
+        <div class="search-box">
+            <input type="text" id="searchBar" placeholder="Search formulas or topics..." onkeyup="filterContent()">
+        </div>
+        <div class="topic-list" id="topicListContainer">
+            <!-- Dynamic Topics Injected Generatively via System JS -->
+        </div>
+    </div>
+
+    <!-- MAIN WORKSPACE FRAMEWORK -->
+    <div id="main-content">
+        <header>
+            <div class="header-controls">
+                <button class="btn" onclick="toggleSidebarView()">☰ Menu</button>
+                <div style="display:flex; flex-direction:column;">
+                    <span style="font-size:0.8rem; color:var(--text-secondary);">DAY-1 COMPLETION</span>
+                    <div class="progress-container">
+                        <div class="progress-bar" id="topProgressBar"></div>
+                    </div>
+                    <span style="font-size:0.75rem; color:var(--text-secondary); text-align:right;" id="progressPercentDisplay">0%</span>
+                </div>
+            </div>
+            <div class="header-controls">
+                <button class="btn" id="revisionToggle" onclick="toggleRevisionMode()">⚡ Revision Mode</button>
+                <button class="btn" id="bookmarkToggle" onclick="toggleGlobalBookmark()">🔖 Bookmark</button>
+                <button class="btn" onclick="toggleThemeEngine()">🌓 Theme</button>
+            </div>
+        </header>
+
+        <!-- DYNAMIC WORKSPACE VIEWPORT -->
+        <div class="workspace" id="workspaceViewport">
+            <!-- Content renders here via renderActiveWorkspaceTopic() -->
+        </div>
+    </div>
+
+    <!-- FLOATING SESSION TIMER WIDGET -->
+    <div id="floating-timer">
+        <span>⏱️ Session:</span>
+        <span id="timerClockDisplay">00:00:00</span>
+    </div>
+
+    <script>
+// METRIC AND CORE KNOWLEDGE BASE FOR DATA REPOSITORY SYSTEM (PHASE 1)
+const topicDatabase = [{id: 0,name: "Percentage",category: "Arithmetic",introduction: {definition: "Percentage is a mathematical ratio expressing quantities as fractions of 100. It transforms absolute parameters into unified scales for baseline normalization.",importance: "Hexaware evaluates core financial scale testing, standard logical translations, and raw comparison speeds via advanced structural percentages.",frequency: "Extremely High (appears across roughly 4-5 direct questions minimum, plus anchors all DI structures directly).",concepts: "Fraction-Percentage equivalence tracking, successive variable changes, base change shifts, product-constancy equations."},formulas: [{ name: "Basic Percentage Formula", equation: "Percentage (%) = (Part / Whole) × 100", explanation: "Calculates the proportional weight of a standard variable relative to its universal anchor population boundary.", meaning: "Part = Segment value investigated; Whole = Total population baseline reference point.", shortcut: "Shift decimal point two places left on base to calculate 1% systematically; adjust via quick multiplication scalar blocks.", notes: "Always evaluate shifting denominators carefully when calculating sequential margins." },{ name: "Percentage Increase / Decrease", equation: "Change (%) = (|New Value - Old Value| / Original Base Value) × 100", explanation: "Measures scaling shift adjustments dynamically over a singular coordinate baseline position.", meaning: "Original Base Value must always map precisely to chronological status prior to change action.", shortcut: "Use factor scaling values directly (e.g., 20% shift maps cleanly to a 1.2 or 0.8 multiplier block).", notes: "A common exam mistake is accidentally swapping tracking positions into the denominator block." },{ name: "Successive Percentage Adjustments", equation: "Net Shift Effective (%) = A + B + (AB / 100)", explanation: "Computes compounding alterations over variables subjected to successive tracking loops.", meaning: "A and B symbolize sequential percentage increments (positive value scaling) or decrements (negative value scaling).", shortcut: "If values reduce scales sequentially, apply direct subtraction blocks to simplify algebraic calculation frameworks.", notes: "Essential structural framework for computing cumulative operational efficiency margins and compounding discounts." }],whenToUse: [{ condition: "When problems specify scaling changes sequentially across fixed tracking attributes.", formula: "Net Shift Effective (%) = A + B + (AB / 100)", reason: "Avoids slow piece-by-piece fractional conversions.", trick: "If tracking scales show opposing trends (e.g., up 20% then down 10%), use structural signage rules (+20, -10) instantly." }],identification: [{ keyword: "increased by", matches: "Percentage Shift calculations using original base metrics as standard parameters." },{ keyword: "successive discount", matches: "Successive Percentage compounding formulas applying structural reduction coefficients." }],shortcuts: [{ type: "Fraction Transformation Matrix", desc: "Instantly convert complicated values to fractional metrics: 16.66% = 1/6, 14.28% = 1/7, 12.5% = 1/8, 11.11% = 1/9, 9.09% = 1/11." }],mistakes: [{ point: "Swapping Base Coordinates", solution: "Always check word roots: 'compared to X' or 'than Y' isolates the tracking base item into the denominator layer automatically." }],example: {question: "If a company salary escalates by 20% and subsequently decreases by 10% during an economic consolidation phase, calculate the net structural modification percentage.",idMethod: "Detects sequential structural changes over an undefined parameter base.",whyFormula: "Successive framework avoids complex scalar testing operations.",stepSolution: "1. Identify A = +20 and B = -10.\n2. Injected: 20 + (-10) + ((20 * -10)/100).\n3. Simplification yields: 10 - 2 = +8%.",shortcutApp: "Multiplier: 1.20 × 0.90 = 1.08, indicating an exact 8% gain instantly."},pattern: { hexaware: "Moderate; prioritizes checking base-level transitions and rapid data manipulations under tight constraints.", competitors: "TCS tests complex multi-layered word problems; Infosys blends variables with analytical puzzle frameworks." },memory: { trick: "Mnemonic: 'ADD, MULTIPLY, DIVIDE BY 100' - keeps the operational flow of tracking sequential percentages clear without hesitation." },targetCheck: ["Can I determine base variables instantly?", "Do fractional shortcuts bypass long multiplications?"]},{id: 1,name: "Ratio and Proportion",category: "Arithmetic",introduction: {definition: "Ratios present relative sizing profiles dividing abstract values into common baseline scalar factors.",importance: "Enables fast value allocation across multi-variable distribution problems, mixture tracking arrays, and structural tracking frameworks.",frequency: "High (Acts as the primary arithmetic processing tool for age splits, partnerships, and sharing matrices).",concepts: "Compounding ratios, tracking mean proportion values, fourth proportion shifts, structural scaling coefficients."},formulas: [{ name: "Proportional Equality Identity", equation: "If a : b = c : d, then (a × d) = (b × c)", explanation: "Establishes identity balance conditions across separate relative ratios.", meaning: "Product of extreme components matches tracking product balances of interior core configurations.", shortcut: "Isolate unknowns dynamically by cross-multiplying verified values across the balancing equation.", notes: "Always verify scale dimensions share identical scalar types before creating equations." },{ name: "Mean Proportion Identity", equation: "Mean Proportion (x) of a and b = √(a × b)", explanation: "Determines geometric balance constants tracking across structural scalar arrays.", meaning: "Locates precise intermediate balance dimensions linking boundary points dynamically.", shortcut: "Factorize elements immediately to clear radical structures without long multiplications.", notes: "Frequently used in structural scaling questions and geometric comparison tests." }],whenToUse: [{ condition: "When variables distribute assets dynamically across segmented component dimensions.", formula: "Value Allocation = Total × (Target Shares / Combined System Shares)", reason: "Bypasses tracking algebraic expressions step-by-step.", trick: "Sum up fractional ratio components to look for direct factoring matches against total pool amounts." }],identification: [{ keyword: "distributed in the ratio", matches: "Proportional asset sharing rules applying scalar tracking factors." },{ keyword: "mean proportional to", matches: "Geometric tracking equations using radical multiplication identities." }],shortcuts: [{ type: "Ratio Bridge Technique", desc: "If A:B = 2:3 and B:C = 4:5, write A:B:C by multiplying matching paths: A = 2×4, B = 3×4, C = 3×5 -> 8:12:15." }],mistakes: [{ point: "Mismatching Variable Orders", solution: "Label columns clearly with string IDs to prevent putting terms in inverted tracking positions." }],example: {question: "Divide $1200 between three operational units where scaling partitions register structural limits matching the ratio 2:3:5.",idMethod: "Look for distribution problems splitting values across defined relative segments.",whyFormula: "Total weight scaling allows you to isolate exact component parts directly.",stepSolution: "1. Combined weight tracking units = 2 + 3 + 5 = 10.\n2. Divide baseline pools: $1200 / 10 = $120 scalar constant.\n3. Compute outputs: Unit 1 = 240, Unit 2 = 360, Unit 3 = 600.",shortcutApp: "Unit 3 must equal 5/10 (exactly half) of the pool value, isolating 600 instantly without checking alternative profiles."},pattern: { hexaware: "Easy to Moderate; emphasizes tracking dynamic ratio changes when mixing options or shifting baseline contents.", competitors: "Accenture relies on basic evaluation; product firms build intricate systems tracking multi-layered asset equations." },memory: { trick: "Visualize ratio values as physical boxes. Add all boxes together to find your divisor parameter instantly." },targetCheck: ["Can I bridge disparate multi-ratios cleanly?", "Can I extract absolute units from relative structures quickly?"]},{id: 2,name: "Profit and Loss",category: "Arithmetic",introduction: {definition: "Tracks capital transactions based on Cost Price (CP), Selling Price (SP), and Marked Price (MP) references.",importance: "Evaluates rapid logic checks regarding business trade margins, overhead cost balances, and pricing adjustments.",frequency: "High (A core component of commercial math testing systems).",concepts: "Profit/Loss metrics, discount parameters, dishonest seller tracking strategies, equivalent single discounts."},formulas: [{ name: "Profit / Loss Percentages", equation: "Profit (%) = (Profit / CP) × 100 | Loss (%) = (Loss / CP) × 100", explanation: "Calculates real business returns relative to baseline capital investments.", meaning: "Profit = SP - CP; Loss = CP - SP. CP acts as the absolute baseline value for return measurements.", shortcut: "Think of tracking gains as decimal scaling multipliers above or below 1.0.", notes: "Remember that margins track against Cost Price unless the question explicitly specifies otherwise." },{ name: "Marked Price & Discount Balance", equation: "SP = MP × [1 - (Discount (%) / 100)]", explanation: "Determines actual selling transactions after applying discount parameters to catalog targets.", meaning: "MP = Catalog value; Discount = Value deduction step percentage.", shortcut: "Apply compound multipliers directly to find terminal values without calculating intermediate discount steps.", notes: "Discounts track relative to the Marked Price parameter layer." },{ name: "Dishonest Dealer Weight Equation", equation: "Profit (%) = [ (True Weight - Faulty Weight) / Faulty Weight ] × 100", explanation: "Computes financial yields when tracking margins via inventory reduction shortcuts.", meaning: "True Weight = Specified quantity; Faulty Weight = Actual delivered mass.", shortcut: "Map ratios directly to actual delivered components to calculate results quickly.", notes: "Be careful to use the actual delivered quantity as the mathematical baseline parameter." }],whenToUse: [{ condition: "When transactions state retail markups alongside sequential discount reductions.", formula: "CP / MP = (100 - Discount %) / (100 + Profit %)", reason: "Links disparate price levels directly without requiring intermediate step calculations.", trick: "Use this structural ratio directly whenever problems link discount structures and final profits." }],identification: [{ keyword: "marked up by", matches: "Marked Price generation scaling original capital baselines upward." },{ keyword: "cheats by using x grams instead of", matches: "Dishonest dealer equations using inventory metrics to find true yields." }],shortcuts: [{ type: "The Constant Profit Bypass", desc: "Selling items at identical prices where one gains x% and one loses x% always yields an absolute structural loss of (x/10)^2 percent." }],mistakes: [{ point: "Calculating Marks over SP", solution: "Markups scale up from Cost Price; discounts scale down from Marked Price. Keep these tracking layers separate." }],example: {question: "A merchant lists an item at a 30% markup over cost but offers a 10% cash discount at checkout. Calculate the true net transaction yield.",idMethod: "Tracks compounding commercial pricing stages across a single item path.",whyFormula: "CP to MP markup followed by a discount maps cleanly to standard successive equations.",stepSolution: "1. Apply values: A = +30, B = -10.\n2. Injected: 30 - 10 + ((30 * -10)/100).\n3. Result: 20 - 3 = +17% net gain.",shortcutApp: "Assume CP = 100 -> MP = 130. 10% discount removes 13 -> SP = 117. Net profit = 17% instantly."},pattern: { hexaware: "Moderate; focuses on false-weight scenarios and calculating equivalent single discount steps.", competitors: "Wipro presents standard applications; Deloitte applies financial accounting case variations." },memory: { trick: "Mnemonic: 'Cost Protects, Marked Promotes' - connects your cost baseline to underlying assets and your marked baseline to promotional discounts." },targetCheck: ["Can I isolate Cost Prices directly from given profit rates?", "Can I process false-weight calculations reliably?"]}];
+
+// PERSISTENT STORAGE AND SYSTEM STATE MATRIX ENGINE
+let currentTopicIndex = 0;
+let completionTrackingState = JSON.parse(localStorage.getItem('hexaware_day1_completion')) || {};
+let noteStorageState = JSON.parse(localStorage.getItem('hexaware_day1_notes')) || {};
+let bookmarkStorageState = JSON.parse(localStorage.getItem('hexaware_day1_bookmarks')) || {};
+let isRevisionFocusedMode = false;
+let sessionTimerSeconds = 0;
+
+// SYSTEM BOOTSTRAP INITIALIZATION ENGINE
+window.addEventListener('DOMContentLoaded', () => {
+    initializeApplicationTimer();
+    hydrateTopicNavigationSidebar();
+    renderActiveWorkspaceTopic();
+    evaluateSystemGlobalProgress();
+});
+
+// TIME TRACKING ENGINE CLOSURE
+function initializeApplicationTimer() {
+    setInterval(() => {
+        sessionTimerSeconds++;
+        const hrs = String(Math.floor(sessionTimerSeconds / 3600)).padStart(2, '0');
+        const mins = String(Math.floor((sessionTimerSeconds % 3600) / 60)).padStart(2, '0');
+        const secs = String(sessionTimerSeconds % 60).padStart(2, '0');
+        document.getElementById('timerClockDisplay').innerText = `${hrs}:${mins}:${secs}`;
+    }, 1000);
+}
+
+// SIDEBAR RENDERING SYSTEM
+function hydrateTopicNavigationSidebar() {
+    const container = document.getElementById('topicListContainer');
+    container.innerHTML = '';
+    topicDatabase.forEach((topic) => {
+        const item = document.createElement('div');
+        item.className = `topic-item ${topic.id === currentTopicIndex ? 'active' : ''}`;
+        item.onclick = () => {
+            selectTopicContext(topic.id);
+        };
+        const isDone = completionTrackingState[topic.id] ? '✓' : '○';
+        const doneClass = completionTrackingState[topic.id] ? 'color: var(--success-color);' : 'color: var(--text-secondary);';
+        const isBookmarked = bookmarkStorageState[topic.id] ? '🔖' : '';
+        item.innerHTML = `<div style="display:flex; flex-direction:column;"> <span style="font-weight:600; font-size:0.95rem;">${topic.name}</span> <span style="font-size:0.75rem; color:var(--text-secondary)">${topic.category}</span> </div> <div class="topic-meta"> <span style="font-size:0.8rem; font-weight:bold; ${doneClass}">${isDone}</span> <span style="font-size:0.8rem;">${isBookmarked}</span> </div>`;
+        container.appendChild(item);
+    });
+}
+
+// NAVIGATION LOGIC INTERFACE
+function selectTopicContext(id) {
+    currentTopicIndex = id;
+    renderActiveWorkspaceTopic();
+    hydrateTopicNavigationSidebar();
+    updateBookmarkButtonState();
+}
+function navigateTopic(direction) {
+    const tentativeIndex = currentTopicIndex + direction;
+    if (tentativeIndex >= 0 && tentativeIndex < topicDatabase.length) {
+        selectTopicContext(tentativeIndex);
+    }
+}
+
+// COMPONENT WORKSPACE ENGINE INJECTION
+function renderActiveWorkspaceTopic() {
+    const viewport = document.getElementById('workspaceViewport');
+    const data = topicDatabase[currentTopicIndex];
+    let formulasHTML = '';
+    data.formulas.forEach((f, idx) => {
+        formulasHTML += `<div class="formula-card"><h3>${f.name}</h3><div class="formula-display">${escapeHTML(f.equation)}</div><p><strong>Context:</strong> ${f.explanation}</p><p><strong>Variables:</strong> ${f.meaning}</p><p><strong>Shortcut Pivot:</strong> ${f.shortcut}</p><p><strong>Critical Bounds:</strong> ${f.notes}</p></div>`;
+    });
+    let trackingTriggerHTML = '';
+    data.whenToUse.forEach(w => {
+        trackingTriggerHTML += `<p style="margin-bottom:10px; font-size:0.95rem;"><strong>Trigger Condition:</strong> ${w.condition}<br><span style="color:var(--accent-color)">➔ Apply: <code>${escapeHTML(w.formula)}</code></span><br><small style="color:var(--text-secondary)">Rational Foundation: ${w.reason} | Trap Strategy: ${w.trick}</small></p>`;
+    });
+    let idKeywordsHTML = '';
+    data.identification.forEach(k => {
+        idKeywordsHTML += `<li><strong>"${k.keyword}"</strong> matches configuration parameters for: <u>${k.matches}</u></li>`;
+    });
+    let shortcutsHTML = '';
+    data.shortcuts.forEach(s => {
+        shortcutsHTML += `<p style="font-size:0.95rem; margin-bottom:8px;"><strong>${s.type}:</strong> ${s.desc}</p>`;
+    });
+    let errorsHTML = '';
+    data.mistakes.forEach(m => {
+        errorsHTML += `<p style="color:#c0392b; font-size:0.95rem; margin-bottom:5px;"><strong>Trap Vector:</strong> ${m.point}<br><span style="color:var(--success-color)">⚙ Correction Logic: ${m.solution}</span></p>`;
+    });
+    let revisionTableRowsHTML = '';
+    data.formulas.forEach(f => {
+        revisionTableRowsHTML += `<tr><td style="font-weight:bold; font-size:0.85rem;">${f.name}</td><td style="font-size:0.8rem; font-family:monospace; background:var(--bg-primary);">${escapeHTML(f.equation)}</td><td style="font-size:0.85rem;">${f.shortcut}</td><td style="font-size:0.85rem; text-align:center; font-weight:bold; color:var(--accent-color);">High</td></tr>`;
+    });
+    const currentNotes = noteStorageState[data.id] || '';
+    viewport.innerHTML = `<div class="section-card"><h1>${data.name}</h1><p style="color:var(--text-secondary); font-size:1.1rem;">${data.category} Operational Domain</p></div><div class="section-card pedagogical-block"><h2 class="section-title" onclick="toggleBlockCollapse(this)"><span>▼</span> 1. Pedagogical Foundation</h2><div style="display:block;"><p><strong>Theoretical Blueprint:</strong> ${data.introduction.definition}</p><p><strong>Corporate Matrix Target:</strong> ${data.introduction.importance}</p><p><strong>Hexaware Appearance Probability:</strong> ${data.introduction.frequency}</p><p><strong>Core Cognitive Vectors:</strong> ${data.introduction.concepts}</p></div></div><div class="section-card pedagogical-block"><h2 class="section-title" onclick="toggleBlockCollapse(this)"><span>▼</span> 2. Core Formulation & Architectural Models</h2><div style="display:block;" class="formula-grid">${formulasHTML}</div></div><div class="section-card pedagogical-block"><h2 class="section-title" onclick="toggleBlockCollapse(this)"><span>▼</span> 3 & 4. Deployment Diagnostics & Pattern Matches</h2><div style="display:block;"><h3>Operational Triggers</h3>${trackingTriggerHTML}<h3>Keyword Pattern Identification Systems</h3><ul>${idKeywordsHTML}</ul></div></div><div class="section-card pedagogical-block"><h2 class="section-title" onclick="toggleBlockCollapse(this)"><span>▼</span> 5 & 6. Shortcut Processing & Tactical Anti-Trap Vectors</h2><div style="display:block;"><h3>Placement Acceleration Shortcuts</h3>${shortcutsHTML}<h3>Aptitude Core Execution Flaws (Common Pitfalls)</h3>${errorsHTML}</div></div><div class="section-card pedagogical-block"><h2 class="section-title" onclick="toggleBlockCollapse(this)"><span>▼</span> 7. Rigorous Structural Walkthrough Case</h2><div style="display:block;"><p><strong>Scenario Base:</strong> ${data.example.question}</p><p><strong>1. Diagnostic Scan:</strong> ${data.example.idMethod}</p><p><strong>2. Architectural Selection Strategy:</strong> ${data.example.whyFormula}</p><p><strong>3. Step-by-Step Resolution Process:</strong><br>${data.example.stepSolution.replace(/\n/g, '<br>')}</p><p><strong>4. Instant Shortcut Execution Path:</strong> ${data.example.shortcutApp}</p></div></div><div class="section-card pedagogical-block"><h2 class="section-title" onclick="toggleBlockCollapse(this)"><span>▼</span> 8 & 9. Multi-Company Requirements Matrix & Memory Mapping</h2><div style="display:block;"><p><strong>Hexaware Blueprint Profile:</strong> ${data.pattern.hexaware}</p><p><strong>Cross-Company Variance Scales:</strong> ${data.pattern.competitors}</p><p><strong>Memory Consolidation Hook:</strong> ${data.memory.trick}</p></div></div><div class="section-card pedagogical-block" id="revisionTableBlock"><h2 class="section-title" onclick="toggleBlockCollapse(this)"><span>▼</span> 10. High-Speed Matrix Revision Matrix</h2><div style="display:block;"><table><thead><tr><th>Formula Name</th><th>Equation</th><th>Shortcut</th><th>Priority</th></tr></thead><tbody>${revisionTableRowsHTML}</tbody></table></div></div><div class="section-card pedagogical-block"><h2 class="section-title" onclick="toggleBlockCollapse(this)"><span>▼</span> 11. Custom Notes Layer & Day-1 Validation</h2><div style="display:block;"><p>Write questions, ideas, or personal reminders below. Data updates automatically to your local browser storage cache.</p><textarea id="customNotesField" class="notes-area" placeholder="Type your notes here..." oninput="saveCustomNotesData()">${currentNotes}</textarea><p style="margin-top:10px; font-weight:bold; color:var(--accent-color);">Day-1 Core Target Check: If you can identify the formula required, explain why it works, and point out standard traps instantly, you have successfully mastered this module.</p></div></div>`;
+    if (isRevisionFocusedMode) {
+        applyRevisionFilterState();
+    }
+}
+
+// UI INTERACTION ARCHITECTURES
+function toggleBlockCollapse(element) {
+    const content = element.nextElementSibling;
+    const span = element.querySelector('span');
+    if (content.style.display === "none") {
+        content.style.display = "block";
+        span.innerText = "▼";
+    } else {
+        content.style.display = "none";
+        span.innerText = "►";
+    }
+}
+function toggleThemeEngine() {
+    const currentTheme = document.documentElement.getAttribute('data-theme');
+    const targetTheme = currentTheme === 'dark' ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', targetTheme);
+}
+function toggleSidebarView() {
+    const sidebar = document.getElementById('sidebar');
+    sidebar.style.display = sidebar.style.display === 'none' ? 'flex' : 'none';
+}
+
+// REVISION ENGINE PATTERN FILTERING
+function toggleRevisionMode() {
+    isRevisionFocusedMode = !isRevisionFocusedMode;
+    const btn = document.getElementById('revisionToggle');
+    if (isRevisionFocusedMode) {
+        btn.style.background = "var(--success-color)";
+        btn.style.color = "white";
+        btn.innerText = "⚡ Revision Active";
+    } else {
+        btn.style.background = "var(--bg-secondary)";
+        btn.style.color = "var(--text-primary)";
+        btn.innerText = "⚡ Revision Mode";
+    }
+    applyRevisionFilterState();
+}
+function applyRevisionFilterState() {
+    const pedagogicalBlocks = document.querySelectorAll('.pedagogical-block');
+    pedagogicalBlocks.forEach(block => {
+        if (isRevisionFocusedMode) {
+            block.classList.add('revision-hidden');
+        } else {
+            block.classList.remove('revision-hidden');
+        }
+    });
+}
+
+// PERSISTENCE STATE UTILITIES (LOCAL STORAGE CORES)
+function markCurrentTopicComplete() {
+    completionTrackingState[currentTopicIndex] = true;
+    localStorage.setItem('hexaware_day1_completion', JSON.stringify(completionTrackingState));
+    evaluateSystemGlobalProgress();
+    hydrateTopicNavigationSidebar();
+}
+function evaluateSystemGlobalProgress() {
+    const completedCount = Object.keys(completionTrackingState).filter(k => completionTrackingState[k] === true).length;
+    const total = topicDatabase.length;
+    const fractionPercent = Math.round((completedCount / total) * 100);
+    document.getElementById('topProgressBar').style.width = `${fractionPercent}%`;
+    document.getElementById('progressPercentDisplay').innerText = `${fractionPercent}%`;
+}
+function saveCustomNotesData() {
+    const textValue = document.getElementById('customNotesField').value;
+    noteStorageState[currentTopicIndex] = textValue;
+    localStorage.setItem('hexaware_day1_notes', JSON.stringify(noteStorageState));
+}
+function toggleGlobalBookmark() {
+    if (bookmarkStorageState[currentTopicIndex]) {
+        delete bookmarkStorageState[currentTopicIndex];
+    } else {
+        bookmarkStorageState[currentTopicIndex] = true;
+    }
+    localStorage.setItem('hexaware_day1_bookmarks', JSON.stringify(bookmarkStorageState));
+    hydrateTopicNavigationSidebar();
+    updateBookmarkButtonState();
+}
+function updateBookmarkButtonState() {
+    const btn = document.getElementById('bookmarkToggle');
+    if (bookmarkStorageState[currentTopicIndex]) {
+        btn.innerText = "🔖 Bookmarked";
+        btn.style.background = "#e67e22";
+    } else {
+        btn.innerText = "🔖 Bookmark";
+        btn.style.background = "var(--bg-secondary)";
+    }
+}
+
+// GLOBAL ENGINE CONTENT FILTER (SEARCH METHOD)
+function filterContent() {
+    const criteria = document.getElementById('searchBar').value.toLowerCase();
+    const topics = document.querySelectorAll('.topic-item');
+    topics.forEach((element, index) => {
+        const targetTopicData = topicDatabase[index];
+        const matchesFormulaName = targetTopicData.formulas.some(f => f.name.toLowerCase().includes(criteria) || f.equation.toLowerCase().includes(criteria));
+        const matchesTopicTitle = targetTopicData.name.toLowerCase().includes(criteria);
+        if (matchesTopicTitle || matchesFormulaName) {
+            element.style.display = "flex";
+        } else {
+            element.style.display = "none";
+        }
+    });
+}
+
+// SECURITY STRING SANITIZER UTILITY
+function escapeHTML(str) {
+    return str.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#039;");
+}
+    </script>
+</body>
+</html>

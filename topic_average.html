@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Topic 3: Average | Hexaware Day-1</title>
+<link rel="stylesheet" href="shared_styles.css">
+</head>
+<body>
+<div class="container">
+<nav class="top-nav">
+  <div class="nav-brand">🎯 Hexaware Aptitude Master</div>
+  <div class="nav-links">
+    <a href="dashboard.html" class="nav-btn home">🏠 Dashboard</a>
+    <a href="topic_ratio.html" class="nav-btn">← Ratio</a>
+    <a href="topic_profit.html" class="nav-btn">Next: Profit & Loss →</a>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="hero-badge">📊 Topic 3 of 28 &nbsp;|&nbsp; DAY 1</div>
+  <h1>AVERAGE <span>Mastery</span></h1>
+  <p>Average = Total Sum ÷ Count. Simple formula, but tricky applications. Hexaware loves asking "new member joins" and "one member leaves" style questions that trip most students.</p>
+  <div class="hero-stats">
+    <div class="stat-chip"><div class="val">⭐⭐⭐</div><div class="lbl">Weightage</div></div>
+    <div class="stat-chip"><div class="val">EASY</div><div class="lbl">Difficulty</div></div>
+    <div class="stat-chip"><div class="val">25s</div><div class="lbl">Per Question</div></div>
+    <div class="stat-chip"><div class="val">HIGH</div><div class="lbl">Hexaware Freq</div></div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-title"><span class="icon icon-purple">🔍</span>5-Second Keyword Identification</div>
+  <div class="keyword-grid">
+    <div class="keyword-chip"><div class="kw">Average</div><div class="arrow">→ Average</div></div>
+    <div class="keyword-chip"><div class="kw">Mean</div><div class="arrow">→ Average</div></div>
+    <div class="keyword-chip"><div class="kw">Joined / Left</div><div class="arrow">→ Average</div></div>
+    <div class="keyword-chip"><div class="kw">Group of N</div><div class="arrow">→ Average</div></div>
+    <div class="keyword-chip"><div class="kw">Sum of</div><div class="arrow">→ Average</div></div>
+    <div class="keyword-chip"><div class="kw">Replaced by</div><div class="arrow">→ Average</div></div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-title"><span class="icon icon-gold">📐</span>All Formulas</div>
+  <div class="formula-grid">
+    <div class="formula-card">
+      <div class="formula-name">Formula 1 — Basic Average</div>
+      <div class="formula-eq">Average = Sum / Count</div>
+      <div class="formula-desc">The golden formula. Sum = Average × Count. Count = Sum ÷ Average.</div>
+      <div class="formula-use">🔑 If avg marks = 75, students = 8 → Total marks = 600</div>
+    </div>
+    <div class="formula-card">
+      <div class="formula-name">Formula 2 — New Average (Member Joins)</div>
+      <div class="formula-eq">New Sum = Old Sum + New Value</div>
+      <div class="formula-desc">When a new person joins, add their value and recalculate average with n+1.</div>
+      <div class="formula-use">🔑 New Avg = New Sum / (n+1)</div>
+    </div>
+    <div class="formula-card">
+      <div class="formula-name">Formula 3 — New Average (Member Leaves)</div>
+      <div class="formula-eq">New Sum = Old Sum − Leaving Value</div>
+      <div class="formula-desc">When a person leaves, subtract their value and recalculate with n-1.</div>
+      <div class="formula-use">🔑 New Avg = New Sum / (n-1)</div>
+    </div>
+    <div class="formula-card">
+      <div class="formula-name">Formula 4 — Replacement Effect</div>
+      <div class="formula-eq">Change in Sum = (New − Old) value</div>
+      <div class="formula-desc">If one member is replaced, change in avg = (New−Old)/n</div>
+      <div class="formula-use">🔑 If avg rises by 2 for 5 people → new person is 2×5=10 more than old</div>
+    </div>
+    <div class="formula-card">
+      <div class="formula-name">Formula 5 — Average of Consecutive Numbers</div>
+      <div class="formula-eq">Avg = (First + Last) / 2</div>
+      <div class="formula-desc">For consecutive numbers, the average is simply the middle value.</div>
+      <div class="formula-use">🔑 Avg of 1 to 99 = (1+99)/2 = 50</div>
+    </div>
+    <div class="formula-card">
+      <div class="formula-name">Formula 6 — Weighted Average</div>
+      <div class="formula-eq">Avg = (n₁x₁ + n₂x₂) / (n₁+n₂)</div>
+      <div class="formula-desc">When two groups with different averages are combined.</div>
+      <div class="formula-use">🔑 Used when "two classes merge" type questions appear</div>
+    </div>
+  </div>
+</div>
+
+<!-- SVG DIAGRAM -->
+<div class="section">
+  <div class="section-title"><span class="icon icon-green">📊</span>Visual: Member Joins — Average Impact</div>
+  <div class="svg-container">
+    <svg width="660" height="200" viewBox="0 0 660 200" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="avg1" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" style="stop-color:#6c63ff"/><stop offset="100%" style="stop-color:#8b5cf6"/></linearGradient>
+        <linearGradient id="avg2" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" style="stop-color:#43e97b"/><stop offset="100%" style="stop-color:#38f9d7"/></linearGradient>
+        <filter id="sf"><feDropShadow dx="0" dy="3" stdDeviation="5" flood-opacity="0.3"/></filter>
+      </defs>
+      <rect x="10" y="60" width="160" height="80" rx="12" fill="url(#avg1)" filter="url(#sf)"/>
+      <text x="90" y="90" text-anchor="middle" fill="white" font-size="12">4 people, avg = 20</text>
+      <text x="90" y="112" text-anchor="middle" fill="white" font-size="13" font-weight="bold">Sum = 4×20 = 80</text>
+      <polygon points="178,100 195,100 195,95 208,102 195,109 195,104 178,104" fill="#6c63ff"/>
+      <rect x="215" y="60" width="150" height="80" rx="12" fill="rgba(255,215,0,0.15)" stroke="#ffd700" stroke-width="1.5"/>
+      <text x="290" y="90" text-anchor="middle" fill="#ffd700" font-size="12">New person joins</text>
+      <text x="290" y="112" text-anchor="middle" fill="#ffd700" font-size="14" font-weight="bold">Age = 30</text>
+      <polygon points="373,100 390,100 390,95 403,102 390,109 390,104 373,104" fill="#43e97b"/>
+      <rect x="410" y="60" width="180" height="80" rx="12" fill="url(#avg2)" filter="url(#sf)"/>
+      <text x="500" y="85" text-anchor="middle" fill="#0a0a0f" font-size="11">New Sum = 80+30 = 110</text>
+      <text x="500" y="104" text-anchor="middle" fill="#0a0a0f" font-size="11">New Count = 4+1 = 5</text>
+      <text x="500" y="128" text-anchor="middle" fill="#0a0a0f" font-size="15" font-weight="bold">New Avg = 110/5 = 22</text>
+      <text x="330" y="180" text-anchor="middle" fill="#a0a0b0" font-size="12">Average went UP because new person (30) is ABOVE old average (20)</text>
+    </svg>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-title"><span class="icon icon-green">⚡</span>Shortcut Tricks</div>
+  <div class="trick-box">
+    <div class="trick-title">🔥 Replacement Shortcut — Never Re-Calculate!</div>
+    <div class="trick-content">
+      If average of n people changes by d after replacement:<br>
+      New person's value = Old person's value + <code>n × d</code><br>
+      Example: 10 people, avg increases by 3 after replacing someone aged 25<br>
+      → New person's age = 25 + 10×3 = <code>55</code>
+    </div>
+  </div>
+  <div class="trick-box">
+    <div class="trick-title">🔥 Consecutive Numbers Average</div>
+    <div class="trick-content">
+      Avg of 1 to n = <code>(n+1)/2</code><br>
+      Avg of 1 to 100 = 101/2 = <code>50.5</code><br>
+      Avg of first n odd numbers = <code>n</code><br>
+      Avg of first n even numbers = <code>n+1</code>
+    </div>
+  </div>
+  <div class="warn-box">
+    <div class="warn-title">❌ Common Trap Questions</div>
+    <strong>TRAP:</strong> "Average speed" ≠ (speed1 + speed2) / 2 ❌<br>
+    Use: 2ab/(a+b) formula for average speed<br><br>
+    <strong>TRAP:</strong> If average of 4 numbers is 20, and a 5th number 10 is added,<br>
+    New avg = (4×20 + 10)/5 = 90/5 = <strong>18</strong> (not 15 or 20)
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-title"><span class="icon icon-pink">🃏</span>Flashcards</div>
+  <div class="flashcard-container">
+    <div class="flashcard" onclick="this.classList.toggle('flipped')">
+      <div class="flashcard-inner">
+        <div class="flashcard-front">Basic Average formula?</div>
+        <div class="flashcard-back">Sum ÷ Count<br>Sum = Avg × Count</div>
+      </div>
+    </div>
+    <div class="flashcard" onclick="this.classList.toggle('flipped')">
+      <div class="flashcard-inner">
+        <div class="flashcard-front">Average of 1 to 99?</div>
+        <div class="flashcard-back">(1+99)/2 = 50</div>
+      </div>
+    </div>
+    <div class="flashcard" onclick="this.classList.toggle('flipped')">
+      <div class="flashcard-inner">
+        <div class="flashcard-front">Avg of first n odd numbers?</div>
+        <div class="flashcard-back">= n<br>(e.g. first 5 odds = 5)</div>
+      </div>
+    </div>
+    <div class="flashcard" onclick="this.classList.toggle('flipped')">
+      <div class="flashcard-inner">
+        <div class="flashcard-front">Weighted average of two groups?</div>
+        <div class="flashcard-back">(n₁x₁ + n₂x₂) / (n₁+n₂)</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-title"><span class="icon icon-purple">🧠</span>Interactive Q&A</div>
+  <div class="question-card">
+    <div class="q-num">QUESTION 1 — EASY</div>
+    <div class="q-text">The average of 5 numbers is 40. If one number 30 is removed, what is the new average?</div>
+    <div class="options">
+      <button class="option-btn" onclick="selectOption(this,'q1',false)">A) 38</button>
+      <button class="option-btn" onclick="selectOption(this,'q1',true)">B) 42.5</button>
+      <button class="option-btn" onclick="selectOption(this,'q1',false)">C) 45</button>
+      <button class="option-btn" onclick="selectOption(this,'q1',false)">D) 40</button>
+    </div>
+    <button class="reveal-btn" onclick="toggleReveal('r1')">📖 Show Solution</button>
+    <div class="answer-reveal" id="r1">
+      <strong>✅ B) 42.5</strong><br><br>
+      Old sum = 5 × 40 = 200<br>
+      New sum = 200 − 30 = 170<br>
+      New avg = 170 / 4 = <strong>42.5</strong>
+    </div>
+  </div>
+  <div class="question-card">
+    <div class="q-num">QUESTION 2 — MODERATE</div>
+    <div class="q-text">Average age of 10 students is 15. A new student joins and the average becomes 15.5. What is the age of the new student?</div>
+    <div class="options">
+      <button class="option-btn" onclick="selectOption(this,'q2',false)">A) 16</button>
+      <button class="option-btn" onclick="selectOption(this,'q2',false)">B) 18</button>
+      <button class="option-btn" onclick="selectOption(this,'q2',true)">C) 20.5</button>
+      <button class="option-btn" onclick="selectOption(this,'q2',false)">D) 22</button>
+    </div>
+    <button class="reveal-btn" onclick="toggleReveal('r2')">📖 Show Solution</button>
+    <div class="answer-reveal" id="r2">
+      <strong>✅ C) 20.5</strong><br><br>
+      Old sum = 10 × 15 = 150<br>
+      New sum = 11 × 15.5 = 170.5<br>
+      New student's age = 170.5 − 150 = <strong>20.5</strong>
+    </div>
+  </div>
+  <div class="question-card">
+    <div class="q-num">QUESTION 3 — EXAM MODERATE</div>
+    <div class="q-text">In a group of 8 people, average age is 30. If one person aged 20 is replaced by someone, and the new average becomes 32, what is the age of the new person?</div>
+    <div class="options">
+      <button class="option-btn" onclick="selectOption(this,'q3',false)">A) 32</button>
+      <button class="option-btn" onclick="selectOption(this,'q3',false)">B) 34</button>
+      <button class="option-btn" onclick="selectOption(this,'q3',true)">C) 36</button>
+      <button class="option-btn" onclick="selectOption(this,'q3',false)">D) 38</button>
+    </div>
+    <button class="reveal-btn" onclick="toggleReveal('r3')">📖 Show Solution</button>
+    <div class="answer-reveal" id="r3">
+      <strong>✅ C) 36</strong><br><br>
+      <strong>Shortcut:</strong> New person = Old person + n × change in avg<br>
+      = 20 + 8 × (32−30) = 20 + 8×2 = 20 + 16 = <strong>36</strong>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-title"><span class="icon icon-gold">📋</span>Quick Revision Matrix</div>
+  <table class="matrix-table">
+    <tr><th>Formula</th><th>When to Use</th><th>Shortcut</th><th>Difficulty</th><th>Hexaware Weight</th></tr>
+    <tr><td>Sum/Count</td><td>Basic average</td><td>Always find Sum first</td><td class="difficulty-easy">Easy</td><td>⭐⭐⭐⭐⭐</td></tr>
+    <tr><td>New Sum ÷ (n±1)</td><td>Member joins/leaves</td><td>Add/subtract from old sum</td><td class="difficulty-easy">Easy</td><td>⭐⭐⭐⭐</td></tr>
+    <tr><td>Old + n×d</td><td>Replacement</td><td>Fastest shortcut</td><td class="difficulty-med">Medium</td><td>⭐⭐⭐⭐⭐</td></tr>
+    <tr><td>(First+Last)/2</td><td>Consecutive numbers</td><td>Middle value</td><td class="difficulty-easy">Easy</td><td>⭐⭐⭐</td></tr>
+    <tr><td>Weighted Avg</td><td>Two groups merge</td><td>(n₁x₁+n₂x₂)/(n₁+n₂)</td><td class="difficulty-med">Medium</td><td>⭐⭐⭐</td></tr>
+  </table>
+</div>
+
+<div class="progress-footer">
+  <h3>📊 Day-1 Progress</h3>
+  <div style="display:flex;justify-content:space-between;margin-bottom:8px;">
+    <span style="color:var(--text2);font-size:0.9rem;">3 of 14 topics completed</span>
+    <span style="color:var(--accent3);font-weight:700;">21%</span>
+  </div>
+  <div class="progress-bar-outer"><div class="progress-bar-inner" style="width:21%"></div></div>
+  <a href="topic_profit.html" class="next-topic-btn">Next Topic: Profit & Loss →</a>
+</div>
+</div>
+<script>
+function selectOption(btn,qId,isCorrect){
+  const p=btn.closest('.question-card');
+  p.querySelectorAll('.option-btn').forEach(b=>{b.classList.remove('correct','wrong');b.disabled=true;});
+  btn.classList.add(isCorrect?'correct':'wrong');
+  if(!isCorrect){p.querySelectorAll('.option-btn').forEach(b=>{if(b.onclick.toString().includes('true'))b.classList.add('correct');});}
+}
+function toggleReveal(id){document.getElementById(id).classList.toggle('show');}
+</script>
+</body>
+</html>

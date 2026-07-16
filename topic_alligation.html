@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Topic 5: Alligation & Mixture | Hexaware Day-1</title>
+<link rel="stylesheet" href="shared_styles.css">
+</head>
+<body>
+<div class="container">
+<nav class="top-nav">
+  <div class="nav-brand">🎯 Hexaware Aptitude Master</div>
+  <div class="nav-links">
+    <a href="dashboard.html" class="nav-btn home">🏠 Dashboard</a>
+    <a href="topic_profit.html" class="nav-btn">← Profit & Loss</a>
+    <a href="topic_timework.html" class="nav-btn">Next: Time & Work →</a>
+  </div>
+</nav>
+<div class="hero">
+  <div class="hero-badge">📊 Topic 5 of 28 &nbsp;|&nbsp; DAY 1</div>
+  <h1>ALLIGATION & <span>MIXTURE</span></h1>
+  <p>Most students skip this topic thinking it's hard. It's actually the EASIEST if you use Cross Subtraction. Bad news: normal method = 3 minutes. Good news: Alligation method = 15 seconds. Use the shortcut always.</p>
+  <div class="hero-stats">
+    <div class="stat-chip"><div class="val">⭐⭐⭐</div><div class="lbl">Weightage</div></div>
+    <div class="stat-chip"><div class="val">EASY</div><div class="lbl">Difficulty</div></div>
+    <div class="stat-chip"><div class="val">20s</div><div class="lbl">Per Question</div></div>
+    <div class="stat-chip"><div class="val">HIGH</div><div class="lbl">Hexaware Freq</div></div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-title"><span class="icon icon-purple">🔍</span>Keywords → Alligation</div>
+  <div class="keyword-grid">
+    <div class="keyword-chip"><div class="kw">Mixed</div><div class="arrow">→ Alligation</div></div>
+    <div class="keyword-chip"><div class="kw">Mixture</div><div class="arrow">→ Alligation</div></div>
+    <div class="keyword-chip"><div class="kw">Milk & Water</div><div class="arrow">→ Alligation</div></div>
+    <div class="keyword-chip"><div class="kw">Price/kg</div><div class="arrow">→ Alligation</div></div>
+    <div class="keyword-chip"><div class="kw">Average Cost</div><div class="arrow">→ Alligation</div></div>
+    <div class="keyword-chip"><div class="kw">Gold/Silver</div><div class="arrow">→ Alligation</div></div>
+    <div class="keyword-chip"><div class="kw">Tea/Rice</div><div class="arrow">→ Alligation</div></div>
+    <div class="keyword-chip"><div class="kw">Two quantities</div><div class="arrow">→ Alligation</div></div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-title"><span class="icon icon-gold">📐</span>The ONE Formula You Need</div>
+  <div class="info-box" style="margin-bottom:18px;">
+    <p><strong>THE GOLDEN RULE:</strong> Ratio = (Higher Value − Mean Value) : (Mean Value − Lower Value)</p>
+  </div>
+  <div class="formula-grid">
+    <div class="formula-card">
+      <div class="formula-name">Cross Subtraction Method</div>
+      <div class="formula-eq">(H − M) : (M − L)</div>
+      <div class="formula-desc">H = Higher value, M = Mean (desired) value, L = Lower value. Always: Higher−Mean gives LOWER ratio. Mean−Lower gives HIGHER ratio.</div>
+      <div class="formula-use">🔑 The most used formula in placement exams</div>
+    </div>
+    <div class="formula-card">
+      <div class="formula-name">Water Addition Formula</div>
+      <div class="formula-eq">(New%−Old%) / (100−New%) × Quantity</div>
+      <div class="formula-desc">When water is added to reduce concentration of milk or mixture.</div>
+      <div class="formula-use">🔑 Hexaware's favourite water addition question</div>
+    </div>
+    <div class="formula-card">
+      <div class="formula-name">Mixture Replacement</div>
+      <div class="formula-eq">Final = Initial × (1 − x/V)^n</div>
+      <div class="formula-desc">When x litres is removed and replaced with water, repeated n times.</div>
+      <div class="formula-use">🔑 V = total volume, x = replaced amount, n = times</div>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-title"><span class="icon icon-green">📊</span>Visual: Cross Subtraction Diagram</div>
+  <div class="svg-container">
+    <svg width="500" height="250" viewBox="0 0 500 250" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="al1" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" style="stop-color:#6c63ff"/><stop offset="100%" style="stop-color:#8b5cf6"/></linearGradient>
+        <linearGradient id="al2" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" style="stop-color:#ff6584"/><stop offset="100%" style="stop-color:#ff8fa0"/></linearGradient>
+        <linearGradient id="al3" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" style="stop-color:#43e97b"/><stop offset="100%" style="stop-color:#38f9d7"/></linearGradient>
+        <filter id="alf"><feDropShadow dx="0" dy="3" stdDeviation="5" flood-opacity="0.3"/></filter>
+      </defs>
+      <!-- Lower value box -->
+      <rect x="30" y="150" width="110" height="60" rx="12" fill="url(#al1)" filter="url(#alf)"/>
+      <text x="85" y="174" text-anchor="middle" fill="white" font-size="12">Lower Value</text>
+      <text x="85" y="198" text-anchor="middle" fill="white" font-size="22" font-weight="900">₹20</text>
+      <!-- Mean box at top -->
+      <rect x="195" y="50" width="110" height="60" rx="12" fill="url(#al3)" filter="url(#alf)"/>
+      <text x="250" y="74" text-anchor="middle" fill="#0a0a0f" font-size="12">Mean Value</text>
+      <text x="250" y="98" text-anchor="middle" fill="#0a0a0f" font-size="22" font-weight="900">₹30</text>
+      <!-- Higher value box -->
+      <rect x="360" y="150" width="110" height="60" rx="12" fill="url(#al2)" filter="url(#alf)"/>
+      <text x="415" y="174" text-anchor="middle" fill="white" font-size="12">Higher Value</text>
+      <text x="415" y="198" text-anchor="middle" fill="white" font-size="22" font-weight="900">₹50</text>
+      <!-- Cross lines -->
+      <line x1="250" y1="110" x2="85" y2="150" stroke="#43e97b" stroke-width="2.5" stroke-dasharray="6,3"/>
+      <line x1="250" y1="110" x2="415" y2="150" stroke="#ff6584" stroke-width="2.5" stroke-dasharray="6,3"/>
+      <!-- Difference labels -->
+      <rect x="60" y="218" width="50" height="26" rx="8" fill="rgba(67,233,123,0.2)" stroke="rgba(67,233,123,0.4)"/>
+      <text x="85" y="236" text-anchor="middle" fill="#43e97b" font-size="13" font-weight="bold">50−30=20</text>
+      <rect x="390" y="218" width="50" height="26" rx="8" fill="rgba(255,101,132,0.2)" stroke="rgba(255,101,132,0.4)"/>
+      <text x="415" y="236" text-anchor="middle" fill="#ff6584" font-size="13" font-weight="bold">30−20=10</text>
+      <text x="250" y="190" text-anchor="middle" fill="#ffd700" font-size="14" font-weight="bold">Ratio = 20 : 10 = 2 : 1</text>
+    </svg>
+  </div>
+  <div class="trick-box" style="margin-top:14px;">
+    <div class="trick-title">📌 Read the Diagram: Tea worth ₹20/kg mixed with ₹50/kg to get ₹30/kg mixture</div>
+    <div class="trick-content">
+      Higher(50) − Mean(30) = 20 → This is the ratio for the LOWER quantity<br>
+      Mean(30) − Lower(20) = 10 → This is the ratio for the HIGHER quantity<br>
+      Ratio of (₹20 tea) : (₹50 tea) = <code>20 : 10 = 2 : 1</code>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-title"><span class="icon icon-green">⚡</span>Shortcuts & Tricks</div>
+  <div class="trick-box">
+    <div class="trick-title">🔥 The Cross Subtraction Rule — Memorize Forever</div>
+    <div class="trick-content">
+      Step 1: Draw Mean value in the center.<br>
+      Step 2: Write Lower on left, Higher on right.<br>
+      Step 3: Cross-subtract: <code>Higher − Mean</code> gives left (lower) ratio.<br>
+      Step 4: <code>Mean − Lower</code> gives right (higher) ratio.<br>
+      That's it. No equations needed!
+    </div>
+  </div>
+  <div class="warn-box">
+    <div class="warn-title">❌ Never Use Equations in Alligation!</div>
+    <strong>WRONG WAY:</strong> 20x + 50y = 30(x+y) → solve for x and y (takes 2 minutes) ❌<br>
+    <strong>RIGHT WAY:</strong> Cross Subtraction → (50−30):(30−20) = 20:10 = 2:1 ✅ (15 seconds)
+  </div>
+  <div class="warn-box">
+    <div class="warn-title">❌ Most Common Mistake — Wrong Subtraction Order</div>
+    Students sometimes write: Lower − Mean or Mean − Higher<br>
+    <strong>ALWAYS:</strong> Higher − Mean = lower side ratio | Mean − Lower = higher side ratio
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-title"><span class="icon icon-pink">🃏</span>Flashcards</div>
+  <div class="flashcard-container">
+    <div class="flashcard" onclick="this.classList.toggle('flipped')">
+      <div class="flashcard-inner">
+        <div class="flashcard-front">Alligation ratio formula?</div>
+        <div class="flashcard-back">(H−M) : (M−L)<br>Cross Subtraction</div>
+      </div>
+    </div>
+    <div class="flashcard" onclick="this.classList.toggle('flipped')">
+      <div class="flashcard-inner">
+        <div class="flashcard-front">Tea ₹40 & ₹60 → mixture ₹50. Ratio?</div>
+        <div class="flashcard-back">(60−50):(50−40)<br>= 10:10 = 1:1</div>
+      </div>
+    </div>
+    <div class="flashcard" onclick="this.classList.toggle('flipped')">
+      <div class="flashcard-inner">
+        <div class="flashcard-front">Milk 20L has 20% water. Add water for 40%?</div>
+        <div class="flashcard-back">(40−20)/(100−40) × 20<br>= 20/60 × 20 = 6.67L</div>
+      </div>
+    </div>
+    <div class="flashcard" onclick="this.classList.toggle('flipped')">
+      <div class="flashcard-inner">
+        <div class="flashcard-front">Which value gives the "lower" ratio?</div>
+        <div class="flashcard-back">Higher − Mean<br>gives the lower qty ratio</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-title"><span class="icon icon-purple">🧠</span>Interactive Q&A</div>
+  <div class="question-card">
+    <div class="q-num">QUESTION 1 — EASY</div>
+    <div class="q-text">Milk costing ₹20/litre is mixed with milk costing ₹50/litre to get a mixture at ₹30/litre. What is the ratio?</div>
+    <div class="options">
+      <button class="option-btn" onclick="selectOption(this,'q1',true)">A) 2:1</button>
+      <button class="option-btn" onclick="selectOption(this,'q1',false)">B) 1:2</button>
+      <button class="option-btn" onclick="selectOption(this,'q1',false)">C) 3:1</button>
+      <button class="option-btn" onclick="selectOption(this,'q1',false)">D) 1:1</button>
+    </div>
+    <button class="reveal-btn" onclick="toggleReveal('r1')">📖 Show Solution</button>
+    <div class="answer-reveal" id="r1">
+      <strong>✅ A) 2:1</strong><br><br>
+      Using Cross Subtraction:<br>
+      Higher(50) − Mean(30) = 20 (ratio for ₹20 milk)<br>
+      Mean(30) − Lower(20) = 10 (ratio for ₹50 milk)<br>
+      Ratio of ₹20 milk : ₹50 milk = <strong>20:10 = 2:1</strong>
+    </div>
+  </div>
+  <div class="question-card">
+    <div class="q-num">QUESTION 2 — MODERATE</div>
+    <div class="q-text">Tea worth ₹40/kg and ₹60/kg are mixed to get tea worth ₹48/kg. In what ratio are they mixed?</div>
+    <div class="options">
+      <button class="option-btn" onclick="selectOption(this,'q2',false)">A) 1:1</button>
+      <button class="option-btn" onclick="selectOption(this,'q2',false)">B) 1:2</button>
+      <button class="option-btn" onclick="selectOption(this,'q2',true)">C) 3:2</button>
+      <button class="option-btn" onclick="selectOption(this,'q2',false)">D) 2:3</button>
+    </div>
+    <button class="reveal-btn" onclick="toggleReveal('r2')">📖 Show Solution</button>
+    <div class="answer-reveal" id="r2">
+      <strong>✅ C) 3:2</strong><br><br>
+      Higher(60) − Mean(48) = 12 (ratio for ₹40 tea)<br>
+      Mean(48) − Lower(40) = 8 (ratio for ₹60 tea)<br>
+      Ratio ₹40 : ₹60 = <strong>12:8 = 3:2</strong>
+    </div>
+  </div>
+  <div class="question-card">
+    <div class="q-num">QUESTION 3 — EXAM MODERATE</div>
+    <div class="q-text">20 litres of mixture contains 20% water. How much water should be added to make it 40% water?</div>
+    <div class="options">
+      <button class="option-btn" onclick="selectOption(this,'q3',false)">A) 5L</button>
+      <button class="option-btn" onclick="selectOption(this,'q3',false)">B) 5.5L</button>
+      <button class="option-btn" onclick="selectOption(this,'q3',true)">C) 6.67L</button>
+      <button class="option-btn" onclick="selectOption(this,'q3',false)">D) 8L</button>
+    </div>
+    <button class="reveal-btn" onclick="toggleReveal('r3')">📖 Show Solution</button>
+    <div class="answer-reveal" id="r3">
+      <strong>✅ C) 6.67L</strong><br><br>
+      Water to add = (New% − Old%) / (100 − New%) × Quantity<br>
+      = (40 − 20) / (100 − 40) × 20<br>
+      = 20/60 × 20 = <strong>6.67 litres</strong>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-title"><span class="icon icon-gold">📋</span>Quick Revision Matrix</div>
+  <table class="matrix-table">
+    <tr><th>Formula</th><th>When to Use</th><th>Key Rule</th><th>Difficulty</th><th>Hexaware Weight</th></tr>
+    <tr><td>(H−M):(M−L)</td><td>Any mixture/blending problem</td><td>Cross Subtraction always</td><td class="difficulty-easy">Easy</td><td>⭐⭐⭐⭐⭐</td></tr>
+    <tr><td>(N%−O%)/(100−N%)×Q</td><td>Water addition questions</td><td>Hexaware favourite</td><td class="difficulty-med">Medium</td><td>⭐⭐⭐⭐⭐</td></tr>
+    <tr><td>V×(1−x/V)^n</td><td>Repeated replacement</td><td>Exponential formula</td><td class="difficulty-hard">Hard</td><td>⭐⭐⭐</td></tr>
+  </table>
+</div>
+
+<div class="progress-footer">
+  <h3>📊 Day-1 Progress</h3>
+  <div style="display:flex;justify-content:space-between;margin-bottom:8px;">
+    <span style="color:var(--text2);font-size:0.9rem;">5 of 14 topics completed</span>
+    <span style="color:var(--accent3);font-weight:700;">36%</span>
+  </div>
+  <div class="progress-bar-outer"><div class="progress-bar-inner" style="width:36%"></div></div>
+  <a href="topic_timework.html" class="next-topic-btn">Next Topic: Time & Work →</a>
+</div>
+</div>
+<script>
+function selectOption(btn,qId,isCorrect){
+  const p=btn.closest('.question-card');
+  p.querySelectorAll('.option-btn').forEach(b=>{b.classList.remove('correct','wrong');b.disabled=true;});
+  btn.classList.add(isCorrect?'correct':'wrong');
+  if(!isCorrect){p.querySelectorAll('.option-btn').forEach(b=>{if(b.onclick.toString().includes('true'))b.classList.add('correct');});}
+}
+function toggleReveal(id){document.getElementById(id).classList.toggle('show');}
+</script>
+</body>
+</html>

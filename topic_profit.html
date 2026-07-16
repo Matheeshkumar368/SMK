@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Topic 4: Profit & Loss | Hexaware Day-1</title>
+<link rel="stylesheet" href="shared_styles.css">
+</head>
+<body>
+<div class="container">
+<nav class="top-nav">
+  <div class="nav-brand">🎯 Hexaware Aptitude Master</div>
+  <div class="nav-links">
+    <a href="dashboard.html" class="nav-btn home">🏠 Dashboard</a>
+    <a href="topic_average.html" class="nav-btn">← Average</a>
+    <a href="topic_alligation.html" class="nav-btn">Next: Alligation →</a>
+  </div>
+</nav>
+<div class="hero">
+  <div class="hero-badge">📊 Topic 4 of 28 &nbsp;|&nbsp; DAY 1</div>
+  <h1>PROFIT & <span>LOSS</span></h1>
+  <p>Everything is based on Cost Price (CP). If you sell above CP → Profit. Below CP → Loss. Discount is always on Marked Price. Profit% is always on CP. Remember these two rules and half the topic is done.</p>
+  <div class="hero-stats">
+    <div class="stat-chip"><div class="val">⭐⭐⭐⭐</div><div class="lbl">Weightage</div></div>
+    <div class="stat-chip"><div class="val">EASY-MED</div><div class="lbl">Difficulty</div></div>
+    <div class="stat-chip"><div class="val">40s</div><div class="lbl">Per Question</div></div>
+    <div class="stat-chip"><div class="val">VERY HIGH</div><div class="lbl">Hexaware Freq</div></div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-title"><span class="icon icon-purple">🔍</span>Keywords → Topic Identification</div>
+  <div class="keyword-grid">
+    <div class="keyword-chip"><div class="kw">Cost Price</div><div class="arrow">→ P&L</div></div>
+    <div class="keyword-chip"><div class="kw">Selling Price</div><div class="arrow">→ P&L</div></div>
+    <div class="keyword-chip"><div class="kw">Profit</div><div class="arrow">→ P&L</div></div>
+    <div class="keyword-chip"><div class="kw">Loss</div><div class="arrow">→ P&L</div></div>
+    <div class="keyword-chip"><div class="kw">Discount</div><div class="arrow">→ P&L</div></div>
+    <div class="keyword-chip"><div class="kw">Marked Price</div><div class="arrow">→ P&L</div></div>
+    <div class="keyword-chip"><div class="kw">Shopkeeper</div><div class="arrow">→ P&L</div></div>
+    <div class="keyword-chip"><div class="kw">Bought/Sold</div><div class="arrow">→ P&L</div></div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-title"><span class="icon icon-gold">📐</span>All Formulas — Complete Arsenal</div>
+  <div class="formula-grid">
+    <div class="formula-card">
+      <div class="formula-name">Formula 1 — Profit</div>
+      <div class="formula-eq">Profit = SP − CP</div>
+      <div class="formula-desc">Selling Price minus Cost Price. Always positive when profit.</div>
+      <div class="formula-use">🔑 If SP > CP → Profit situation</div>
+    </div>
+    <div class="formula-card">
+      <div class="formula-name">Formula 2 — Loss</div>
+      <div class="formula-eq">Loss = CP − SP</div>
+      <div class="formula-desc">Cost Price minus Selling Price. Always positive when loss.</div>
+      <div class="formula-use">🔑 If CP > SP → Loss situation</div>
+    </div>
+    <div class="formula-card">
+      <div class="formula-name">Formula 3 — Profit Percentage</div>
+      <div class="formula-eq">Profit% = (Profit/CP) × 100</div>
+      <div class="formula-desc">ALWAYS on CP. Never on SP. This is the most common mistake.</div>
+      <div class="formula-use">⚠️ Profit% is ALWAYS calculated on CP</div>
+    </div>
+    <div class="formula-card">
+      <div class="formula-name">Formula 4 — Loss Percentage</div>
+      <div class="formula-eq">Loss% = (Loss/CP) × 100</div>
+      <div class="formula-desc">Same rule — always on CP. CP = Base for all calculations.</div>
+      <div class="formula-use">⚠️ Loss% is ALWAYS calculated on CP</div>
+    </div>
+    <div class="formula-card">
+      <div class="formula-name">Formula 5 — SP from Profit%</div>
+      <div class="formula-eq">SP = CP × (100 + P%) / 100</div>
+      <div class="formula-desc">Find selling price when profit% and CP are given.</div>
+      <div class="formula-use">🔑 CP=500, P%=20 → SP = 500×120/100 = 600</div>
+    </div>
+    <div class="formula-card">
+      <div class="formula-name">Formula 6 — SP from Loss%</div>
+      <div class="formula-eq">SP = CP × (100 − L%) / 100</div>
+      <div class="formula-desc">Find selling price when loss% and CP are given.</div>
+      <div class="formula-use">🔑 CP=500, L%=10 → SP = 500×90/100 = 450</div>
+    </div>
+    <div class="formula-card">
+      <div class="formula-name">Formula 7 — Marked Price & Discount</div>
+      <div class="formula-eq">SP = MP × (100 − D%) / 100</div>
+      <div class="formula-desc">Discount is ALWAYS on Marked Price (MP). SP = MP after discount.</div>
+      <div class="formula-use">⚠️ Discount is on MP, Profit is on CP</div>
+    </div>
+    <div class="formula-card">
+      <div class="formula-name">Formula 8 — False Weight Profit</div>
+      <div class="formula-eq">Profit% = (True−False)/False × 100</div>
+      <div class="formula-desc">When shopkeeper uses false weights, calculate actual profit.</div>
+      <div class="formula-use">🔑 Claims 1000g but gives 900g → Profit = 100/900 × 100 = 11.1%</div>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-title"><span class="icon icon-green">📊</span>Visual: CP → MP → SP Flow</div>
+  <div class="svg-container">
+    <svg width="680" height="200" viewBox="0 0 680 200" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="pl1" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" style="stop-color:#6c63ff"/><stop offset="100%" style="stop-color:#8b5cf6"/></linearGradient>
+        <linearGradient id="pl2" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" style="stop-color:#ffd700"/><stop offset="100%" style="stop-color:#ffaa00"/></linearGradient>
+        <linearGradient id="pl3" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" style="stop-color:#43e97b"/><stop offset="100%" style="stop-color:#38f9d7"/></linearGradient>
+        <filter id="pf"><feDropShadow dx="0" dy="3" stdDeviation="5" flood-opacity="0.3"/></filter>
+      </defs>
+      <rect x="10" y="60" width="130" height="80" rx="12" fill="url(#pl1)" filter="url(#pf)"/>
+      <text x="75" y="90" text-anchor="middle" fill="white" font-size="12" font-weight="bold">COST PRICE</text>
+      <text x="75" y="115" text-anchor="middle" fill="white" font-size="20" font-weight="900">CP</text>
+      <text x="75" y="135" text-anchor="middle" fill="rgba(255,255,255,0.7)" font-size="11">₹500</text>
+      <line x1="148" y1="100" x2="195" y2="100" stroke="#6c63ff" stroke-width="2" stroke-dasharray="5,3"/>
+      <polygon points="195,95 205,100 195,105" fill="#6c63ff"/>
+      <rect x="155" y="75" width="40" height="24" rx="8" fill="rgba(108,99,255,0.2)"/>
+      <text x="175" y="91" text-anchor="middle" fill="#6c63ff" font-size="11" font-weight="bold">+30%</text>
+      <rect x="210" y="60" width="150" height="80" rx="12" fill="url(#pl2)" filter="url(#pf)"/>
+      <text x="285" y="90" text-anchor="middle" fill="#0a0a0f" font-size="12" font-weight="bold">MARKED PRICE</text>
+      <text x="285" y="115" text-anchor="middle" fill="#0a0a0f" font-size="20" font-weight="900">MP</text>
+      <text x="285" y="135" text-anchor="middle" fill="rgba(0,0,0,0.6)" font-size="11">₹650</text>
+      <line x1="368" y1="100" x2="415" y2="100" stroke="#ffd700" stroke-width="2" stroke-dasharray="5,3"/>
+      <polygon points="415,95 425,100 415,105" fill="#ffd700"/>
+      <rect x="375" y="75" width="42" height="24" rx="8" fill="rgba(255,215,0,0.2)"/>
+      <text x="396" y="91" text-anchor="middle" fill="#ffd700" font-size="11" font-weight="bold">−10%</text>
+      <rect x="430" y="60" width="150" height="80" rx="12" fill="url(#pl3)" filter="url(#pf)"/>
+      <text x="505" y="90" text-anchor="middle" fill="#0a0a0f" font-size="12" font-weight="bold">SELLING PRICE</text>
+      <text x="505" y="115" text-anchor="middle" fill="#0a0a0f" font-size="20" font-weight="900">SP</text>
+      <text x="505" y="135" text-anchor="middle" fill="rgba(0,0,0,0.6)" font-size="11">₹585</text>
+      <text x="340" y="185" text-anchor="middle" fill="#43e97b" font-size="12">Net Profit = SP−CP = 585−500 = ₹85 | Profit% = 85/500×100 = 17%</text>
+    </svg>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-title"><span class="icon icon-green">⚡</span>Shortcut Tricks</div>
+  <div class="trick-box">
+    <div class="trick-title">🔥 The Two Golden Rules of P&L</div>
+    <div class="trick-content">
+      Rule 1: <code>Profit% and Loss% are ALWAYS on CP</code><br>
+      Rule 2: <code>Discount% is ALWAYS on MP (Marked Price)</code><br><br>
+      Companies set traps by asking "30% discount on MP and 20% profit on SP" — don't fall for it!
+    </div>
+  </div>
+  <div class="trick-box">
+    <div class="trick-title">🔥 Multiplier Method — Super Fast!</div>
+    <div class="trick-content">
+      20% profit → SP = CP × <code>1.20</code><br>
+      15% loss → SP = CP × <code>0.85</code><br>
+      30% discount on MP → SP = MP × <code>0.70</code><br>
+      Just multiply by (1 ± rate/100) directly!
+    </div>
+  </div>
+  <div class="warn-box">
+    <div class="warn-title">❌ Hexaware's Favourite Traps</div>
+    <strong>TRAP 1:</strong> "Shopkeeper gains 20% profit" → They ask Loss% sometimes using SP as base ❌<br>
+    Always use CP as base for Profit/Loss%.<br><br>
+    <strong>TRAP 2:</strong> "Sold at 20% profit, then 20% loss" → Net result is NOT 0%<br>
+    Net = a+b+ab/100 = 20+(−20)+(20×−20/100) = <strong>−4% loss</strong>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-title"><span class="icon icon-pink">🃏</span>Flashcards</div>
+  <div class="flashcard-container">
+    <div class="flashcard" onclick="this.classList.toggle('flipped')">
+      <div class="flashcard-inner">
+        <div class="flashcard-front">Profit% is always on which price?</div>
+        <div class="flashcard-back">ALWAYS on CP<br>(Cost Price)</div>
+      </div>
+    </div>
+    <div class="flashcard" onclick="this.classList.toggle('flipped')">
+      <div class="flashcard-inner">
+        <div class="flashcard-front">Discount% is always on which price?</div>
+        <div class="flashcard-back">ALWAYS on MP<br>(Marked Price)</div>
+      </div>
+    </div>
+    <div class="flashcard" onclick="this.classList.toggle('flipped')">
+      <div class="flashcard-inner">
+        <div class="flashcard-front">SP when CP=400, Profit=25%?</div>
+        <div class="flashcard-back">400 × 1.25 = 500</div>
+      </div>
+    </div>
+    <div class="flashcard" onclick="this.classList.toggle('flipped')">
+      <div class="flashcard-inner">
+        <div class="flashcard-front">CP when SP=660, Profit=10%?</div>
+        <div class="flashcard-back">660 × 100/110 = 600</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-title"><span class="icon icon-purple">🧠</span>Interactive Q&A</div>
+  <div class="question-card">
+    <div class="q-num">QUESTION 1 — EASY</div>
+    <div class="q-text">A shopkeeper buys an article for ₹400 and sells it for ₹500. What is the profit percentage?</div>
+    <div class="options">
+      <button class="option-btn" onclick="selectOption(this,'q1',false)">A) 20%</button>
+      <button class="option-btn" onclick="selectOption(this,'q1',true)">B) 25%</button>
+      <button class="option-btn" onclick="selectOption(this,'q1',false)">C) 30%</button>
+      <button class="option-btn" onclick="selectOption(this,'q1',false)">D) 15%</button>
+    </div>
+    <button class="reveal-btn" onclick="toggleReveal('r1')">📖 Show Solution</button>
+    <div class="answer-reveal" id="r1">
+      <strong>✅ B) 25%</strong><br><br>
+      Profit = SP − CP = 500 − 400 = ₹100<br>
+      Profit% = (100/400) × 100 = <strong>25%</strong><br>
+      Remember: Profit% on CP, not SP!
+    </div>
+  </div>
+  <div class="question-card">
+    <div class="q-num">QUESTION 2 — MODERATE</div>
+    <div class="q-text">An item is marked at ₹800 and sold at 20% discount. If CP is ₹500, what is the profit%?</div>
+    <div class="options">
+      <button class="option-btn" onclick="selectOption(this,'q2',true)">A) 28%</button>
+      <button class="option-btn" onclick="selectOption(this,'q2',false)">B) 30%</button>
+      <button class="option-btn" onclick="selectOption(this,'q2',false)">C) 20%</button>
+      <button class="option-btn" onclick="selectOption(this,'q2',false)">D) 25%</button>
+    </div>
+    <button class="reveal-btn" onclick="toggleReveal('r2')">📖 Show Solution</button>
+    <div class="answer-reveal" id="r2">
+      <strong>✅ A) 28%</strong><br><br>
+      SP = MP × (100−D%)/100 = 800 × 80/100 = ₹640<br>
+      Profit = 640 − 500 = ₹140<br>
+      Profit% = (140/500) × 100 = <strong>28%</strong>
+    </div>
+  </div>
+  <div class="question-card">
+    <div class="q-num">QUESTION 3 — EXAM MODERATE</div>
+    <div class="q-text">A trader sells at 20% profit, then sells at 20% loss. What is the net result?</div>
+    <div class="options">
+      <button class="option-btn" onclick="selectOption(this,'q3',false)">A) No profit, no loss</button>
+      <button class="option-btn" onclick="selectOption(this,'q3',true)">B) 4% loss</button>
+      <button class="option-btn" onclick="selectOption(this,'q3',false)">C) 4% profit</button>
+      <button class="option-btn" onclick="selectOption(this,'q3',false)">D) 2% loss</button>
+    </div>
+    <button class="reveal-btn" onclick="toggleReveal('r3')">📖 Show Solution</button>
+    <div class="answer-reveal" id="r3">
+      <strong>✅ B) 4% loss</strong><br><br>
+      Net = a + b + ab/100 where a=+20, b=−20<br>
+      = 20 + (−20) + (20×−20)/100<br>
+      = 0 − 400/100 = <strong>−4% (loss)</strong><br>
+      ⚠️ This is Hexaware's #1 P&L trap!
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-title"><span class="icon icon-gold">📋</span>Quick Revision Matrix</div>
+  <table class="matrix-table">
+    <tr><th>Formula</th><th>When to Use</th><th>Key Rule</th><th>Difficulty</th><th>Hexaware Weight</th></tr>
+    <tr><td>SP−CP</td><td>Find profit value</td><td>SP&gt;CP = Profit</td><td class="difficulty-easy">Easy</td><td>⭐⭐⭐⭐⭐</td></tr>
+    <tr><td>(Profit/CP)×100</td><td>Find profit %</td><td>Always on CP</td><td class="difficulty-easy">Easy</td><td>⭐⭐⭐⭐⭐</td></tr>
+    <tr><td>CP×(100+P%)/100</td><td>Find SP from CP+P%</td><td>Multiplier method</td><td class="difficulty-easy">Easy</td><td>⭐⭐⭐⭐</td></tr>
+    <tr><td>MP×(100−D%)/100</td><td>Discount on MP</td><td>Discount on MP only</td><td class="difficulty-med">Medium</td><td>⭐⭐⭐⭐</td></tr>
+    <tr><td>a+b+ab/100</td><td>Two successive P/L</td><td>Never add directly</td><td class="difficulty-med">Medium</td><td>⭐⭐⭐⭐⭐</td></tr>
+  </table>
+</div>
+
+<div class="progress-footer">
+  <h3>📊 Day-1 Progress</h3>
+  <div style="display:flex;justify-content:space-between;margin-bottom:8px;">
+    <span style="color:var(--text2);font-size:0.9rem;">4 of 14 topics completed</span>
+    <span style="color:var(--accent3);font-weight:700;">29%</span>
+  </div>
+  <div class="progress-bar-outer"><div class="progress-bar-inner" style="width:29%"></div></div>
+  <a href="topic_alligation.html" class="next-topic-btn">Next Topic: Alligation & Mixture →</a>
+</div>
+</div>
+<script>
+function selectOption(btn,qId,isCorrect){
+  const p=btn.closest('.question-card');
+  p.querySelectorAll('.option-btn').forEach(b=>{b.classList.remove('correct','wrong');b.disabled=true;});
+  btn.classList.add(isCorrect?'correct':'wrong');
+  if(!isCorrect){p.querySelectorAll('.option-btn').forEach(b=>{if(b.onclick.toString().includes('true'))b.classList.add('correct');});}
+}
+function toggleReveal(id){document.getElementById(id).classList.toggle('show');}
+</script>
+</body>
+</html>
